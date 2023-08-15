@@ -1,0 +1,9 @@
+<view class="block">
+  <t-navbar class="block" title="TDesign MIT License" left-arrow bind:go-back="handleBack" />
+</view>
+
+<view class="page-s">
+  <block>
+    <rich-text nodes="{{htmlSnip}}"></rich-text>
+  </block>
+</view>

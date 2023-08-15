@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/target/target",
+    "pages/privacy/privacy",
+    "pages/license/license",
+    "pages/logs/logs",
+    "pages/tdesignlicense/tdesignlicense"
+  ],
+  "lazyCodeLoading": "requiredComponents",
+  "window": {
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "backgroundColor": "@bgColor",
+    "navigationBarTitleText": "狐云问链",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundColorBottom": "@bgColorBottom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "darkmode": true,
+  "themeLocation": "theme.json",
+  "usingComponents": {}
+}

@@ -1,0 +1,11 @@
+<!--pages/privacy/privacy.wxml-->
+
+<view class="block">
+  <t-navbar class="block" title="用户协议" left-arrow bind:go-back="handleBack" />
+</view>
+
+<view class="page-s">
+  <block>
+    <rich-text nodes="{{htmlSnip}}"></rich-text>
+  </block>
+</view>

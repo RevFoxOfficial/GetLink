@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-result": "tdesign-miniprogram/result/result",
+    "t-navbar": "tdesign-miniprogram/navbar/navbar",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-footer": "tdesign-miniprogram/footer/footer"
+  }
+}

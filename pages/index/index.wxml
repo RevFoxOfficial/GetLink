@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="block">
+  <t-navbar title="狐云问链" t-class-title="nav-title" />
+</view>
+
+<view wx:for="{{resultList}}" wx:for-item="item" wx:key="index">
+  <view class="demo-section__content">
+    <t-result theme="{{item.theme}}" title="{{item.title}}" description="{{item.description}}" />
+  </view>
+</view>
+
+<view class="footer-example">
+  <t-footer text="{{text2}}" links="{{links[0]}}" />
+</view>
+
+
+<view class="button-example2">
+  <t-button theme="primary" size="large" bindtap="onTap2" block>退出</t-button>
+</view>

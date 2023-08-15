@@ -1,0 +1,23 @@
+<!--pages/target/target.wxml-->
+
+<view class="block">
+  <t-navbar title="狐云问链" t-class-title="nav-title" />
+</view>
+
+<view wx:for="{{resultList}}" wx:for-item="item" wx:key="index">
+  <view class="demo-section__content">
+    <t-result theme="{{item.theme}}" title="{{item.title}}" description="{{item.description}}" />
+    <!-- 基础页脚 只有版权信息 -->
+    <t-footer text="内容来源于微信公众平台用户输入，不代表狐云问链立场"></t-footer>
+
+  </view>
+</view>
+
+<view class="footer-example">
+  <t-footer text="{{text22}}" links="{{links[0]}}" />
+</view>
+
+<view class="button-example">
+  <t-button theme="light" size="large" bind:tap="onTap" disabled="{{disabled}}" block>复制链接</t-button>
+  <t-button theme="primary" size="large" bind:tap="onTapTwo" disabled="{{disabled}}" block>复制并退出</t-button>
+</view>
