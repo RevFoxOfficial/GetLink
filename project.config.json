@@ -41,9 +41,9 @@
     "condition": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.19.4",
-  "appid": "wx9fa042ca2691580e",
-  "projectname": "miniprogram-92",
+  "libVersion": "2.11.0",
+  "appid": "",
+  "projectname": "RevfoxGetLink",
   "condition": {},
   "editorSetting": {
     "tabIndent": "auto",
