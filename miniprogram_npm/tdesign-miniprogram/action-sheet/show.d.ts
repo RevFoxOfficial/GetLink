@@ -6,14 +6,11 @@ export interface ActionSheetItem {
     disabled?: boolean;
     icon?: string;
 }
-
 declare type Context = WechatMiniprogram.Page.TrivialInstance | WechatMiniprogram.Component.TrivialInstance;
-
 export declare enum ActionSheetTheme {
     List = "list",
     Grid = "grid"
 }
-
 interface ActionSheetProps {
     align: 'center' | 'left';
     cancelText?: string;
@@ -25,12 +22,10 @@ interface ActionSheetProps {
     visible: boolean;
     defaultVisible?: boolean;
 }
-
 export interface ActionSheetShowOption extends Omit<ActionSheetProps, 'visible'> {
     context?: Context;
     selector?: string;
 }
-
 export declare const show: (options: ActionSheetShowOption) => WechatMiniprogram.Component.TrivialInstance;
 export declare const close: (options: ActionSheetShowOption) => void;
 export {};

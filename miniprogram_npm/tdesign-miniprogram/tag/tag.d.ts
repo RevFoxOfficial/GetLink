@@ -1,6 +1,5 @@
 /// <reference types="miniprogram-api-typings" />
-import {SuperComponent} from '../common/src/index';
-
+import { SuperComponent } from '../common/src/index';
 export default class Tag extends SuperComponent {
     data: {
         prefix: string;

@@ -1,5 +1,4 @@
-import {KeysType} from '../common/common';
-
+import { KeysType } from '../common/common';
 export interface TdDropdownItemProps {
     style?: {
         type: StringConstructor;
@@ -53,11 +52,9 @@ export interface TdDropdownItemProps {
         value?: DropdownValue;
     };
 }
-
 export interface DropdownOption {
     label: string;
     disabled: boolean;
     value: DropdownValue;
 }
-
 export declare type DropdownValue = string | number | Array<DropdownValue>;

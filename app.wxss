@@ -7,4 +7,12 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+
+/* 在app.wxss文件中 */
+page {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", "Fira Sans", "Droid Sans",
+    "Microsoft YaHei", "PingFang SC", "HarmonyOS Sans SC", "MiSans SC", "HONOR Sans CN", "Hiragino Sans GB", "Arial", sans-serif;
+
+}

@@ -42,6 +42,10 @@
   color: var(--td-upload-add-color, var(--td-font-gray-3, rgba(0, 0, 0, 0.4)));
   border-radius: var(--td-upload-radius, var(--td-radius-default, 12rpx));
 }
+.t-upload__add-icon--disabled {
+  background-color: var(--td-upload-add-disabled-bg-color, var(--td-bg-color-component-disabled, var(--td-gray-color-2, #eeeeee)));
+  color: var(--td-upload-add-icon-disabled-color, var(--td-text-color-disabled, var(--td-font-gray-4, rgba(0, 0, 0, 0.26))));
+}
 .t-upload__add-icon:only-child {
   display: flex;
 }
@@ -55,6 +59,16 @@
   position: relative;
   border-radius: var(--td-upload-radius, var(--td-radius-default, 12rpx));
   overflow: hidden;
+}
+.t-upload__wrapper--disabled::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--td-upload-disabled-mask, rgba(255, 255, 255, 0.55));
+  z-index: 1;
 }
 .t-upload__close-btn {
   position: absolute;

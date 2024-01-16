@@ -1,4 +1,8 @@
 const props = {
+    tId: {
+        type: String,
+        value: '',
+    },
     block: {
         type: Boolean,
         value: false,

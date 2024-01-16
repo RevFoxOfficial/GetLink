@@ -12,13 +12,11 @@ export interface TdFooterProps {
         value?: Array<LinkObj>;
     };
 }
-
 export interface FooterLogo {
     icon: string;
     title?: string;
     titleUrl?: string;
 }
-
 export interface LinkObj {
     name: string;
     url?: string;

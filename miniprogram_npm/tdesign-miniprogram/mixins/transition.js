@@ -1,6 +1,5 @@
 import config from '../common/config';
-
-const {prefix} = config;
+const { prefix } = config;
 export default function transition() {
     return Behavior({
         properties: {
@@ -46,14 +45,14 @@ export default function transition() {
                 }
             },
             getDurations() {
-                const {durations} = this.data;
+                const { durations } = this.data;
                 if (Array.isArray(durations)) {
                     return durations.map((item) => Number(item));
                 }
                 return [Number(durations), Number(durations)];
             },
             enter() {
-                const {name} = this.data;
+                const { name } = this.data;
                 const [duration] = this.durations;
                 this.status = 'entering';
                 this.setData({
@@ -78,7 +77,7 @@ export default function transition() {
                 });
             },
             leave() {
-                const {name} = this.data;
+                const { name } = this.data;
                 const [, duration] = this.durations;
                 this.status = 'leaving';
                 this.setData({
@@ -111,7 +110,8 @@ export default function transition() {
                 clearTimeout(this.transitionT);
                 if (this.status === 'entering' && this.data.visible) {
                     this.entered();
-                } else if (this.status === 'leaving' && !this.data.visible) {
+                }
+                else if (this.status === 'leaving' && !this.data.visible) {
                     this.leaved();
                     this.setData({
                         realVisible: false,

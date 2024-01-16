@@ -1,5 +1,4 @@
-import {RelationsOptions, SuperComponent} from '../common/src/index';
-
+import { RelationsOptions, SuperComponent } from '../common/src/index';
 export default class Indexes extends SuperComponent {
     externalClasses: string[];
     properties: import("./type").TdIndexesProps;
@@ -38,7 +37,7 @@ export default class Indexes extends SuperComponent {
         onTouchEnd(e: any): void;
         onAnchorTouch: (...args: any[]) => void;
         setAnchorOnScroll(scrollTop: number): void;
-        onScroll({scrollTop}: {
+        onScroll({ scrollTop }: {
             scrollTop: any;
         }): void;
     };

@@ -26,6 +26,10 @@ const props = {
         type: Boolean,
         value: false,
     },
+    readonly: {
+        type: Boolean,
+        value: false,
+    },
     disabled: {
         type: Boolean,
         value: undefined,

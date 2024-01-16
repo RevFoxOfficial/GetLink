@@ -1,48 +1,24 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) {
-        return value instanceof P ? value : new P(function (resolve) {
-            resolve(value);
-        });
-    }
-
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) {
-            try {
-                step(generator.next(value));
-            } catch (e) {
-                reject(e);
-            }
-        }
-
-        function rejected(value) {
-            try {
-                step(generator["throw"](value));
-            } catch (e) {
-                reject(e);
-            }
-        }
-
-        function step(result) {
-            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-        }
-
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent } from '../common/src/index';
 import props from './props';
 import config from '../common/config';
 import touch from '../mixins/touch';
-import {getRect, uniqueFactory} from '../common/utils';
-
-const {prefix} = config;
+import { getRect, uniqueFactory } from '../common/utils';
+const { prefix } = config;
 const name = `${prefix}-tabs`;
 const getUniqueID = uniqueFactory('tabs');
 let Tabs = class Tabs extends SuperComponent {
@@ -115,24 +91,24 @@ let Tabs = class Tabs extends SuperComponent {
         };
         this.methods = {
             onScroll(e) {
-                const {scrollLeft} = e.detail;
+                const { scrollLeft } = e.detail;
                 this.setData({
                     scrollLeft,
                 });
             },
             updateTabs(cb) {
-                const {children} = this;
+                const { children } = this;
                 const tabs = children.map((child) => child.data);
                 tabs.forEach((item) => {
                     if (typeof item.icon === 'string') {
-                        item.icon = {name: item.icon};
+                        item.icon = { name: item.icon };
                     }
                 });
-                this.setData({tabs}, cb);
+                this.setData({ tabs }, cb);
                 this.setCurrentIndexByName(this.properties.value);
             },
             setCurrentIndexByName(name) {
-                const {children} = this;
+                const { children } = this;
                 const index = children.findIndex((child) => child.getComputedName() === `${name}`);
                 if (index > -1) {
                     this.setCurrentIndex(index);
@@ -173,11 +149,11 @@ let Tabs = class Tabs extends SuperComponent {
                     }
                     getRect(this, `.${prefix}-tabs__track`)
                         .then((res) => {
-                            if (res) {
-                                this.trackWidth = res.width;
-                                resolve(this.trackWidth);
-                            }
-                        })
+                        if (res) {
+                            this.trackWidth = res.width;
+                            resolve(this.trackWidth);
+                        }
+                    })
                         .catch(reject);
                 });
             },
@@ -185,10 +161,10 @@ let Tabs = class Tabs extends SuperComponent {
                 return __awaiter(this, void 0, void 0, function* () {
                     if (!this.properties.showBottomLine)
                         return;
-                    const {children} = this;
+                    const { children } = this;
                     if (!children)
                         return;
-                    const {currentIndex} = this.data;
+                    const { currentIndex } = this.data;
                     if (currentIndex <= -1)
                         return;
                     try {
@@ -222,13 +198,14 @@ let Tabs = class Tabs extends SuperComponent {
             transform: translateX(${distance}px);
           `,
                         });
-                    } catch (err) {
+                    }
+                    catch (err) {
                         this.triggerEvent('error', err);
                     }
                 });
             },
             onTabTap(event) {
-                const {index} = event.currentTarget.dataset;
+                const { index } = event.currentTarget.dataset;
                 this.changeIndex(index);
             },
             onTouchStart(event) {
@@ -244,7 +221,7 @@ let Tabs = class Tabs extends SuperComponent {
             onTouchEnd() {
                 if (!this.properties.swipeable)
                     return;
-                const {direction, deltaX, offsetX} = this;
+                const { direction, deltaX, offsetX } = this;
                 const minSwipeDistance = 50;
                 if (direction === 'horizontal' && offsetX >= minSwipeDistance) {
                     const index = this.getAvailableTabIndex(deltaX);
@@ -258,15 +235,15 @@ let Tabs = class Tabs extends SuperComponent {
             },
             changeIndex(index) {
                 const currentTab = this.data.tabs[index];
-                const {value, label} = currentTab;
+                const { value, label } = currentTab;
                 if (!(currentTab === null || currentTab === void 0 ? void 0 : currentTab.disabled) && index !== this.data.currentIndex) {
-                    this._trigger('change', {value, label});
+                    this._trigger('change', { value, label });
                 }
-                this._trigger('click', {value, label});
+                this._trigger('click', { value, label });
             },
             getAvailableTabIndex(deltaX) {
                 const step = deltaX > 0 ? -1 : 1;
-                const {currentIndex, tabs} = this.data;
+                const { currentIndex, tabs } = this.data;
                 const len = tabs.length;
                 for (let i = step; currentIndex + step >= 0 && currentIndex + step < len; i += step) {
                     const newIndex = currentIndex + i;
@@ -278,7 +255,6 @@ let Tabs = class Tabs extends SuperComponent {
             },
         };
     }
-
     initChildId() {
         this.children.forEach((item, index) => {
             item.setId(`${this.data.tabID}_panel_${index}`);

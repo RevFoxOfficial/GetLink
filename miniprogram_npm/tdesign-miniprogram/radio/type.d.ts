@@ -31,6 +31,10 @@ export interface TdRadioProps<T = RadioValue> {
         type: StringConstructor;
         value?: string;
     };
+    readonly?: {
+        type: BooleanConstructor;
+        value?: boolean;
+    };
     disabled?: {
         type: BooleanConstructor;
         value?: boolean;
@@ -64,5 +68,4 @@ export interface TdRadioProps<T = RadioValue> {
         value?: T;
     };
 }
-
 export declare type RadioValue = string | number | boolean;

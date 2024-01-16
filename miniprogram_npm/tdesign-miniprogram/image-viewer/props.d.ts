@@ -1,4 +1,3 @@
-import {TdImageViewerProps} from './type';
-
+import { TdImageViewerProps } from './type';
 declare const props: TdImageViewerProps;
 export default props;

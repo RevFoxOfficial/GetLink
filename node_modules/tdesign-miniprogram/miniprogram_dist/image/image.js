@@ -26,13 +26,6 @@ let Image = class Image extends SuperComponent {
             classPrefix: name,
         };
         this.preSrc = '';
-        this.lifetimes = {
-            attached() {
-                const { width, height } = this.data;
-                this.update();
-                this.calcSize(width, height);
-            },
-        };
         this.observers = {
             src() {
                 if (this.preSrc === this.properties.src)

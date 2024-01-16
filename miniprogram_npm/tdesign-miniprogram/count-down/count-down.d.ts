@@ -1,5 +1,4 @@
-import {SuperComponent} from '../common/src/index';
-
+import { SuperComponent } from '../common/src/index';
 export default class CountDown extends SuperComponent {
     externalClasses: string[];
     properties: import("./type").TdCountDownProps;

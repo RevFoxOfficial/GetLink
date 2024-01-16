@@ -1,7 +1,6 @@
-import {SuperComponent} from '../common/src/index';
-import {SkeletonRowColObj} from './type';
-import {ClassName, Styles} from '../common/common';
-
+import { SuperComponent } from '../common/src/index';
+import { SkeletonRowColObj } from './type';
+import { ClassName, Styles } from '../common/common';
 export default class Skeleton extends SuperComponent {
     externalClasses: string[];
     properties: import("./type").TdSkeletonProps;

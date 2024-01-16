@@ -1,16 +1,14 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent } from '../common/src/index';
 import config from '../common/config';
 import props from './props';
-import {unitConvert} from '../common/utils';
-
-const {prefix} = config;
+import { unitConvert } from '../common/utils';
+const { prefix } = config;
 const name = `${prefix}-pull-down-refresh`;
 let PullDownRefresh = class PullDownRefresh extends SuperComponent {
     constructor() {
@@ -42,8 +40,8 @@ let PullDownRefresh = class PullDownRefresh extends SuperComponent {
         };
         this.lifetimes = {
             attached() {
-                const {screenWidth} = wx.getSystemInfoSync();
-                const {loadingBarHeight, loadingTexts} = this.properties;
+                const { screenWidth } = wx.getSystemInfoSync();
+                const { loadingBarHeight, loadingTexts } = this.properties;
                 this.setData({
                     loadingTexts: Array.isArray(loadingTexts) && loadingTexts.length >= 4
                         ? loadingTexts
@@ -80,8 +78,9 @@ let PullDownRefresh = class PullDownRefresh extends SuperComponent {
                             refreshStatus: 3,
                         });
                     }
-                    this.setData({barHeight: 0});
-                } else {
+                    this.setData({ barHeight: 0 });
+                }
+                else {
                     this.doRefresh();
                 }
             },
@@ -96,30 +95,30 @@ let PullDownRefresh = class PullDownRefresh extends SuperComponent {
                 });
             },
             onScroll(e) {
-                const {scrollTop} = e.detail;
+                const { scrollTop } = e.detail;
                 this.setData({
                     enableToRefresh: scrollTop === 0,
                 });
-                this.triggerEvent('scroll', {scrollTop});
+                this.triggerEvent('scroll', { scrollTop });
             },
             onTouchStart(e) {
                 if (this.isPulling || !this.data.enableToRefresh)
                     return;
-                const {touches} = e;
+                const { touches } = e;
                 if (touches.length !== 1)
                     return;
-                const {pageX, pageY} = touches[0];
-                this.setData({loosing: false});
-                this.startPoint = {pageX, pageY};
+                const { pageX, pageY } = touches[0];
+                this.setData({ loosing: false });
+                this.startPoint = { pageX, pageY };
                 this.isPulling = true;
             },
             onTouchMove(e) {
                 if (!this.startPoint)
                     return;
-                const {touches} = e;
+                const { touches } = e;
                 if (touches.length !== 1)
                     return;
-                const {pageY} = touches[0];
+                const { pageY } = touches[0];
                 const offset = pageY - this.startPoint.pageY;
                 if (offset > 0) {
                     this.setRefreshBarHeight(offset);
@@ -128,19 +127,20 @@ let PullDownRefresh = class PullDownRefresh extends SuperComponent {
             onTouchEnd(e) {
                 if (!this.startPoint)
                     return;
-                const {changedTouches} = e;
+                const { changedTouches } = e;
                 if (changedTouches.length !== 1)
                     return;
-                const {pageY} = changedTouches[0];
+                const { pageY } = changedTouches[0];
                 const barHeight = pageY - this.startPoint.pageY;
                 this.startPoint = null;
                 this.isPulling = false;
-                this.setData({loosing: true});
+                this.setData({ loosing: true });
                 if (barHeight > this.loadingBarHeight) {
-                    this._trigger('change', {value: true});
+                    this._trigger('change', { value: true });
                     this.triggerEvent('refresh');
-                } else {
-                    this.setData({barHeight: 0});
+                }
+                else {
+                    this.setData({ barHeight: 0 });
                 }
             },
             doRefresh() {
@@ -153,16 +153,17 @@ let PullDownRefresh = class PullDownRefresh extends SuperComponent {
                     this.maxRefreshAnimateTimeFlag = null;
                     if (this.data.refreshStatus === 2) {
                         this.triggerEvent('timeout');
-                        this._trigger('change', {value: false});
+                        this._trigger('change', { value: false });
                     }
                 }, this.properties.refreshTimeout);
             },
             setRefreshBarHeight(value) {
                 const barHeight = Math.min(value, this.maxBarHeight);
-                const data = {barHeight};
+                const data = { barHeight };
                 if (barHeight >= this.loadingBarHeight) {
                     data.refreshStatus = 1;
-                } else {
+                }
+                else {
                     data.refreshStatus = 0;
                 }
                 return new Promise((resolve) => {
@@ -170,7 +171,7 @@ let PullDownRefresh = class PullDownRefresh extends SuperComponent {
                 });
             },
             setScrollTop(scrollTop) {
-                this.setData({scrollTop});
+                this.setData({ scrollTop });
             },
             scrollToTop() {
                 this.setScrollTop(0);

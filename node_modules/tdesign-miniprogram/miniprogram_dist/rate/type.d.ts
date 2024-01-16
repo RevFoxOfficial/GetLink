@@ -27,6 +27,11 @@ export interface TdRateProps {
         type: null;
         value?: string | number;
     };
+    iconPrefix?: {
+        type: StringConstructor;
+        value?: string;
+        reuqired?: boolean;
+    };
     icon?: {
         type: null;
         value?: string | string[];
@@ -50,5 +55,9 @@ export interface TdRateProps {
     defaultValue?: {
         type: NumberConstructor;
         value?: number;
+    };
+    placement?: {
+        type: StringConstructor;
+        value?: 'top' | 'bottom';
     };
 }

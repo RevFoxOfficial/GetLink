@@ -1,16 +1,14 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {isObject, SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent, isObject } from '../common/src/index';
 import config from '../common/config';
 import props from './props';
-import {setIcon, uniqueFactory} from '../common/utils';
-
-const {prefix} = config;
+import { uniqueFactory, setIcon } from '../common/utils';
+const { prefix } = config;
 const name = `${prefix}-grid-item`;
 const getUniqueID = uniqueFactory('grid_item');
 var LinkTypes;
@@ -70,9 +68,8 @@ let GridItem = class GridItem extends SuperComponent {
             },
         };
     }
-
     updateStyle() {
-        const {hover, align} = this.parent.properties;
+        const { hover, align } = this.parent.properties;
         const gridItemStyles = [];
         const gridItemWrapperStyles = [];
         const gridItemContentStyles = [];
@@ -91,43 +88,38 @@ let GridItem = class GridItem extends SuperComponent {
             align: align,
         });
     }
-
     getWidthStyle() {
-        const {column} = this.parent.properties;
+        const { column } = this.parent.properties;
         return column > 0 ? `width:${(1 / column) * 100}%` : '';
     }
-
     getPaddingStyle() {
-        const {gutter} = this.parent.properties;
+        const { gutter } = this.parent.properties;
         if (gutter)
             return `padding-left:${gutter}rpx;padding-top:${gutter}rpx`;
         return '';
     }
-
     getBorderStyle() {
-        const {gutter} = this.parent.properties;
-        let {border} = this.parent.properties;
+        const { gutter } = this.parent.properties;
+        let { border } = this.parent.properties;
         if (!border)
             return '';
         if (!isObject(border))
             border = {};
-        const {color = '#266FE8', width = 2, style = 'solid'} = border;
+        const { color = '#266FE8', width = 2, style = 'solid' } = border;
         if (gutter)
             return `border:${width}rpx ${style} ${color}`;
         return `border-top:${width}rpx ${style} ${color};border-left:${width}rpx ${style} ${color}`;
     }
-
     onClick(e) {
-        const {item} = e.currentTarget.dataset;
+        const { item } = e.currentTarget.dataset;
         this.triggerEvent('click', item);
         this.jumpLink();
     }
-
     jumpLink() {
-        const {url, jumpType} = this.properties;
+        const { url, jumpType } = this.properties;
         if (url && jumpType) {
             if (LinkTypes[jumpType]) {
-                wx[LinkTypes[jumpType]]({url});
+                wx[LinkTypes[jumpType]]({ url });
             }
         }
     }

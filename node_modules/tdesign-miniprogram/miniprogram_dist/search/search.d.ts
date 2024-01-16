@@ -5,15 +5,10 @@ export default class Search extends SuperComponent {
         multipleSlots: boolean;
     };
     properties: import("./type").TdSearchProps;
-    observers: {
-        focus(this: Search, nextValue: boolean): void;
-    };
+    observers: {};
     data: {
         classPrefix: string;
         prefix: string;
-        localValue: {
-            focus: boolean;
-        };
     };
     onInput(e: any): void;
     onFocus(e: any): void;

@@ -4,14 +4,8 @@ const defaultOption = {
     changeEventName: 'change',
     strict: true,
 };
-
 function useControl(option = {}) {
-    const {
-        valueKey,
-        defaultValueKey,
-        changeEventName,
-        strict
-    } = Object.assign(Object.assign({}, defaultOption), option);
+    const { valueKey, defaultValueKey, changeEventName, strict } = Object.assign(Object.assign({}, defaultOption), option);
     const props = this.properties || {};
     const value = props[valueKey];
     const defaultValue = props[strict ? defaultValueKey : valueKey];
@@ -20,7 +14,7 @@ function useControl(option = {}) {
         controlled = true;
     }
     const set = (newVal, extObj, fn) => {
-        this.setData(Object.assign({[`_${valueKey}`]: newVal}, extObj), fn);
+        this.setData(Object.assign({ [`_${valueKey}`]: newVal }, extObj), fn);
     };
     return {
         controlled,
@@ -36,11 +30,11 @@ function useControl(option = {}) {
             }
             if (typeof customUpdateFn === 'function') {
                 customUpdateFn();
-            } else {
+            }
+            else {
                 set(newVal);
             }
         },
     };
 }
-
-export {useControl};
+export { useControl };

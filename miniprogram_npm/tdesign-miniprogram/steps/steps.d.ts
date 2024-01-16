@@ -1,5 +1,4 @@
-import {RelationsOptions, SuperComponent} from '../common/src/index';
-
+import { SuperComponent, RelationsOptions } from '../common/src/index';
 export default class Steps extends SuperComponent {
     relations: RelationsOptions;
     externalClasses: string[];

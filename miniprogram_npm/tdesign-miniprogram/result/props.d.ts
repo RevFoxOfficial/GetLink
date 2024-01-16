@@ -1,4 +1,3 @@
-import {TdResultProps} from './type';
-
+import { TdResultProps } from './type';
 declare const props: TdResultProps;
 export default props;

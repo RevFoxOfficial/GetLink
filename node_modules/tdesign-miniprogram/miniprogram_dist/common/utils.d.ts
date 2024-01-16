@@ -8,8 +8,11 @@ export declare const styles: (styleObj: any) => string;
 export declare const getAnimationFrame: (context: any, cb: Function) => WechatMiniprogram.NodesRef;
 export declare const getRect: (context: any, selector: string, needAll?: boolean) => Promise<any>;
 export declare const isNumber: (value: any) => boolean;
+export declare const isNull: (value: any) => boolean;
+export declare const isUndefined: (value: any) => boolean;
+export declare const isDef: (value: any) => boolean;
 export declare const addUnit: (value?: string | number) => string | undefined;
-export declare const getCharacterLength: (type: string, str: string, max?: number) => {
+export declare const getCharacterLength: (type: string, char: string | number, max?: number) => {
     length: number;
     characters: string;
 };

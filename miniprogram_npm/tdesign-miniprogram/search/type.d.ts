@@ -31,6 +31,54 @@ export interface TdSearchProps {
         type: StringConstructor;
         value?: string;
     };
+    maxcharacter?: {
+        type: NumberConstructor;
+        value?: number;
+    };
+    maxlength?: {
+        type: NumberConstructor;
+        value?: number;
+    };
+    confirmType?: {
+        type: StringConstructor;
+        value?: 'send' | 'search' | 'next' | 'go' | 'done';
+    };
+    alwaysEmbed?: {
+        type: BooleanConstructor;
+        value?: boolean;
+    };
+    confirmHold?: {
+        type: BooleanConstructor;
+        value?: boolean;
+    };
+    cursor: {
+        type: NumberConstructor;
+        value?: number;
+    };
+    selectionStart?: {
+        type: NumberConstructor;
+        value?: number;
+    };
+    selectionEnd?: {
+        type: NumberConstructor;
+        value?: number;
+    };
+    adjustPosition?: {
+        type: BooleanConstructor;
+        value?: boolean;
+    };
+    holdKeyboard?: {
+        type: BooleanConstructor;
+        value?: boolean;
+    };
+    placeholderStyle: {
+        type: StringConstructor;
+        value?: string;
+    };
+    placeholderClass?: {
+        type: StringConstructor;
+        value?: string;
+    };
     leftIcon?: {
         type: StringConstructor;
         value?: string;

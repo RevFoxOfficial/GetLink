@@ -26,6 +26,52 @@ const props = {
         type: String,
         value: '',
     },
+    maxcharacter: {
+        type: Number,
+    },
+    maxlength: {
+        type: Number,
+        value: -1,
+    },
+    confirmType: {
+        type: String,
+        value: 'search',
+    },
+    alwaysEmbed: {
+        type: Boolean,
+        value: false,
+    },
+    confirmHold: {
+        type: Boolean,
+        value: false,
+    },
+    cursor: {
+        type: Number,
+    },
+    selectionStart: {
+        type: Number,
+        value: -1,
+    },
+    selectionEnd: {
+        type: Number,
+        value: -1,
+    },
+    adjustPosition: {
+        type: Boolean,
+        value: true,
+    },
+    holdKeyboard: {
+        type: Boolean,
+        value: false,
+    },
+    placeholderStyle: {
+        type: String,
+        value: '',
+    },
+    placeholderClass: {
+        type: String,
+        value: '',
+    },
     leftIcon: {
         type: String,
         value: 'search',

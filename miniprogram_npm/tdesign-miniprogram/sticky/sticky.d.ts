@@ -1,9 +1,7 @@
-import {SuperComponent} from '../common/src/index';
-import type {TdStickyProps} from './type';
-
+import { SuperComponent } from '../common/src/index';
+import type { TdStickyProps } from './type';
 export interface StickyProps extends TdStickyProps {
 }
-
 export default class Sticky extends SuperComponent {
     externalClasses: string[];
     properties: TdStickyProps;
@@ -17,6 +15,7 @@ export default class Sticky extends SuperComponent {
         containerStyle: string;
         contentStyle: string;
     };
+    ready(): void;
     methods: {
         onScroll(event?: {
             scrollTop: number;
@@ -28,6 +27,4 @@ export default class Sticky extends SuperComponent {
         }): void;
         getContainerRect(): Promise<WechatMiniprogram.BoundingClientRectCallbackResult>;
     };
-
-    ready(): void;
 }

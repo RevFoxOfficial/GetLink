@@ -32,7 +32,6 @@ export interface TdDrawerProps {
         value?: number;
     };
 }
-
 export interface DrawerItem {
     title: string;
     icon: string;

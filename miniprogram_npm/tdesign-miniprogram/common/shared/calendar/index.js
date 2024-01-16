@@ -1,5 +1,4 @@
-import {getDate, getDateRect, getMonthDateRect, isSameDate, isValidDate} from '../date';
-
+import { getDateRect, isSameDate, getMonthDateRect, isValidDate, getDate } from '../date';
 export default class TCalendar {
     constructor(options = {}) {
         this.type = 'single';
@@ -9,9 +8,8 @@ export default class TCalendar {
         if (!this.maxDate)
             this.maxDate = getDate(6);
     }
-
     getTrimValue() {
-        const {value, type} = this;
+        const { value, type } = this;
         const format = (val) => {
             if (val instanceof Date)
                 return val;
@@ -29,7 +27,6 @@ export default class TCalendar {
             return [];
         }
     }
-
     getDays() {
         const raw = '日一二三四五六';
         const ans = [];
@@ -40,21 +37,20 @@ export default class TCalendar {
         }
         return ans;
     }
-
     getMonths() {
         const ans = [];
         const selectedDate = this.getTrimValue();
-        const {minDate, maxDate, type, format} = this;
-        let {year: minYear, month: minMonth, time: minTime} = getDateRect(minDate);
-        const {year: maxYear, month: maxMonth, time: maxTime} = getDateRect(maxDate);
+        const { minDate, maxDate, type, format } = this;
+        let { year: minYear, month: minMonth, time: minTime } = getDateRect(minDate);
+        const { year: maxYear, month: maxMonth, time: maxTime } = getDateRect(maxDate);
         const calcType = (year, month, date) => {
             const curDate = new Date(year, month, date, 23, 59, 59);
             if (type === 'single' && selectedDate) {
-                if (isSameDate({year, month, date}, selectedDate))
+                if (isSameDate({ year, month, date }, selectedDate))
                     return 'selected';
             }
             if (type === 'multiple' && selectedDate) {
-                const hit = selectedDate.some((item) => isSameDate({year, month, date}, item));
+                const hit = selectedDate.some((item) => isSameDate({ year, month, date }, item));
                 if (hit) {
                     return 'selected';
                 }
@@ -62,9 +58,9 @@ export default class TCalendar {
             if (type === 'range' && selectedDate) {
                 if (Array.isArray(selectedDate)) {
                     const [startDate, endDate] = selectedDate;
-                    if (startDate && isSameDate({year, month, date}, startDate))
+                    if (startDate && isSameDate({ year, month, date }, startDate))
                         return 'start';
-                    if (endDate && isSameDate({year, month, date}, endDate))
+                    if (endDate && isSameDate({ year, month, date }, endDate))
                         return 'end';
                     if (startDate && endDate && curDate.getTime() > startDate.getTime() && curDate.getTime() < endDate.getTime())
                         return 'centre';
@@ -101,9 +97,8 @@ export default class TCalendar {
         }
         return ans;
     }
-
-    select({cellType, year, month, date}) {
-        const {type} = this;
+    select({ cellType, year, month, date }) {
+        const { type } = this;
         const selectedDate = this.getTrimValue();
         if (cellType === 'disabled')
             return;
@@ -112,15 +107,18 @@ export default class TCalendar {
         if (type === 'range' && Array.isArray(selectedDate)) {
             if (selectedDate.length === 1 && selected > selectedDate[0]) {
                 this.value = [selectedDate[0], selected];
-            } else {
+            }
+            else {
                 this.value = [selected];
             }
-        } else if (type === 'multiple' && Array.isArray(selectedDate)) {
+        }
+        else if (type === 'multiple' && Array.isArray(selectedDate)) {
             const newVal = [...selectedDate];
             const index = selectedDate.findIndex((item) => isSameDate(item, selected));
             if (index > -1) {
                 newVal.splice(index, 1);
-            } else {
+            }
+            else {
                 newVal.push(selected);
             }
             this.value = newVal;

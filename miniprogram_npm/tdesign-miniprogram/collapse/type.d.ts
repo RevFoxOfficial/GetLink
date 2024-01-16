@@ -28,5 +28,4 @@ export interface TdCollapseProps {
         value?: CollapseValue;
     };
 }
-
 export declare type CollapseValue = Array<string | number>;

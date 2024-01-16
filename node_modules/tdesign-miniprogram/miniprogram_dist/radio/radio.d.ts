@@ -8,7 +8,6 @@ export default class Radio extends SuperComponent {
     };
     lifetimes: {
         attached(): void;
-        ready(): void;
     };
     properties: {
         borderless: {
@@ -46,6 +45,10 @@ export default class Radio extends SuperComponent {
         style?: {
             type: StringConstructor;
             value?: string;
+        };
+        readonly?: {
+            type: BooleanConstructor;
+            value?: boolean;
         };
         disabled?: {
             type: BooleanConstructor;
@@ -96,7 +99,7 @@ export default class Radio extends SuperComponent {
     methods: {
         handleTap(e: any): void;
         doChange(): void;
-        initStatus(): void;
+        init(): void;
         setDisabled(disabled: Boolean): void;
     };
 }

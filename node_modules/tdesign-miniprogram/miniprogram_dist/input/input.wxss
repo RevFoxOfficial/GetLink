@@ -67,8 +67,8 @@
   color: var(--td-input-prefix-icon-color, var(--td-font-gray-1, rgba(0, 0, 0, 0.9)));
 }
 .t-input__label:not(:empty) {
-  min-width: 2em;
-  max-width: 5em;
+  min-width: var(--td-input-label-min-width, 2em);
+  max-width: var(--td-input-label-max-width, 5em);
   font-size: var(--td-font-size-m, 32rpx);
   line-height: 48rpx;
   color: var(--td-input-label-text-color, var(--td-font-gray-1, rgba(0, 0, 0, 0.9)));

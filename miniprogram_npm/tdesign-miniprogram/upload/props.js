@@ -9,6 +9,10 @@ const props = {
     config: {
         type: Object,
     },
+    disabled: {
+        type: Boolean,
+        value: false,
+    },
     files: {
         type: Array,
         value: null,

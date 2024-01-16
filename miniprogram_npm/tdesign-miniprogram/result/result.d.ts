@@ -1,5 +1,4 @@
-import {SuperComponent} from '../common/src/index';
-
+import { SuperComponent } from '../common/src/index';
 export default class extends SuperComponent {
     options: {
         multipleSlots: boolean;

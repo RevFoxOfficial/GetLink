@@ -1,16 +1,14 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { wxComponent, SuperComponent } from '../common/src/index';
 import config from '../common/config';
 import props from './props';
-import {calcIcon, classNames, isNumber} from '../common/utils';
-
-const {prefix} = config;
+import { classNames, isNumber, calcIcon } from '../common/utils';
+const { prefix } = config;
 const name = `${prefix}-tag`;
 let Tag = class Tag extends SuperComponent {
     constructor() {
@@ -48,8 +46,8 @@ let Tag = class Tag extends SuperComponent {
         };
         this.methods = {
             setClass() {
-                const {prefix, classPrefix} = this.data;
-                const {size, shape, theme, variant, closable, disabled} = this.properties;
+                const { prefix, classPrefix } = this.data;
+                const { size, shape, theme, variant, closable, disabled } = this.properties;
                 const tagClass = [
                     classPrefix,
                     `${classPrefix}--${theme || 'default'}`,
@@ -65,12 +63,12 @@ let Tag = class Tag extends SuperComponent {
                 });
             },
             setTagStyle() {
-                const {maxWidth} = this.properties;
+                const { maxWidth } = this.properties;
                 if (!maxWidth) {
                     return '';
                 }
                 const width = isNumber(maxWidth) ? `${maxWidth}px` : maxWidth;
-                this.setData({tagStyle: `max-width:${width};`});
+                this.setData({ tagStyle: `max-width:${width};` });
             },
             handleClick(e) {
                 if (this.data.disabled)

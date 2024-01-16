@@ -1,9 +1,7 @@
-import {RelationsOptions, SuperComponent} from '../common/src/index';
-import type {TdCollapsePanelProps} from './type';
-
+import { SuperComponent, RelationsOptions } from '../common/src/index';
+import type { TdCollapsePanelProps } from './type';
 export interface CollapsePanelProps extends TdCollapsePanelProps {
 }
-
 export default class CollapsePanel extends SuperComponent {
     externalClasses: string[];
     options: {
@@ -20,8 +18,7 @@ export default class CollapsePanel extends SuperComponent {
         ultimateDisabled: boolean;
     };
     methods: {
-        set(data: Record<string, object | any>): Promise<unknown>;
-        updateExpanded(activeValues: any): void;
+        updateExpanded(activeValues?: any[]): void;
         updateStyle(expanded: boolean): Promise<void>;
         onClick(): void;
     };

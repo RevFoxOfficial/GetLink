@@ -56,6 +56,7 @@
   width: 100%;
   height: calc(var(--td-side-bar-border-radius, 18rpx) * 2);
   background: #fff;
+  pointer-events: none;
 }
 .t-side-bar-item__prefix::after,
 .t-side-bar-item__suffix::after {

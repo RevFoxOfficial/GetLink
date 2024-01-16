@@ -44,7 +44,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  border-bottom: 1px solid var(--td-cell-border-color, var(--td-component-stroke, var(--td-gray-color-3, #e7e7e7)));
+  border-bottom: var(--td-cell-border-width, 1px) solid var(--td-cell-border-color, var(--td-component-stroke, var(--td-gray-color-3, #e7e7e7)));
   transform: scaleY(0.5);
   left: var(--td-cell-border-left-space, var(--td-cell-horizontal-padding, 32rpx));
   right: var(--td-cell-border-right-space, 0);

@@ -1,15 +1,13 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent } from '../common/src/index';
 import config from '../common/config';
 import props from './props';
-
-const {prefix} = config;
+const { prefix } = config;
 const name = `${prefix}-picker`;
 let Picker = class Picker extends SuperComponent {
     constructor() {
@@ -33,8 +31,8 @@ let Picker = class Picker extends SuperComponent {
             },
             keys(obj) {
                 this.setData({
-                    labelAlias: obj.label || 'label',
-                    valueAlias: obj.value || 'value',
+                    labelAlias: (obj === null || obj === void 0 ? void 0 : obj.label) || 'label',
+                    valueAlias: (obj === null || obj === void 0 ? void 0 : obj.value) || 'value',
                 });
             },
         };
@@ -48,7 +46,7 @@ let Picker = class Picker extends SuperComponent {
         };
         this.methods = {
             updateChildren() {
-                const {value, defaultValue} = this.properties;
+                const { value, defaultValue } = this.properties;
                 this.$children.forEach((child, index) => {
                     var _a, _b;
                     child.setData({
@@ -76,31 +74,30 @@ let Picker = class Picker extends SuperComponent {
                 const [value, label] = this.getSelectedValue();
                 const columns = this.getColumnIndexes();
                 this.close('confirm-btn');
-                this.triggerEvent('change', {value, label, columns});
-                this.triggerEvent('confirm', {value, label, columns});
+                this.triggerEvent('change', { value, label, columns });
+                this.triggerEvent('confirm', { value, label, columns });
             },
-            triggerColumnChange({column, index}) {
+            triggerColumnChange({ column, index }) {
                 const [value, label] = this.getSelectedValue();
-                this.triggerEvent('pick', {value, label, column, index});
+                this.triggerEvent('pick', { value, label, column, index });
             },
             onCancel() {
                 this.close('cancel-btn');
                 this.triggerEvent('cancel');
             },
             onPopupChange(e) {
-                const {visible} = e.detail;
+                const { visible } = e.detail;
                 this.close('overlay');
-                this.triggerEvent('visible-change', {visible});
+                this.triggerEvent('visible-change', { visible });
             },
             close(trigger) {
                 if (this.data.autoClose) {
-                    this.setData({visible: false});
+                    this.setData({ visible: false });
                 }
-                this.triggerEvent('close', {trigger});
+                this.triggerEvent('close', { trigger });
             },
         };
     }
-
     ready() {
         this.$children.map((column, index) => (column.columnIndex = index));
     }

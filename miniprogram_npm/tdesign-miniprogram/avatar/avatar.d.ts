@@ -1,6 +1,5 @@
 /// <reference types="miniprogram-api-typings" />
-import {RelationsOptions, SuperComponent} from '../common/src/index';
-
+import { SuperComponent, RelationsOptions } from '../common/src/index';
 export default class Avatar extends SuperComponent {
     options: WechatMiniprogram.Component.ComponentOptions;
     externalClasses: string[];

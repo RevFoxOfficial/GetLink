@@ -1,5 +1,4 @@
-import {SwiperNavProps} from '../swiper-nav/index';
-
+import { SwiperNavProps } from '../swiper-nav/index';
 export interface TdSwiperProps {
     autoplay?: {
         type: BooleanConstructor;
@@ -66,7 +65,6 @@ export interface TdSwiperProps {
         value?: boolean;
     };
 }
-
 export interface SwiperList {
     value: string;
     ariaLabel: string;

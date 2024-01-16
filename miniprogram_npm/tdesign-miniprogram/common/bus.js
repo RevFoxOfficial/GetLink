@@ -3,7 +3,6 @@ export default class Bus {
         this.listeners = new Map();
         this.emitted = new Set();
     }
-
     on(evtName, listener) {
         if (this.emitted.has(evtName)) {
             listener();
@@ -13,7 +12,6 @@ export default class Bus {
         target.push(listener);
         this.listeners.set(evtName, target);
     }
-
     emit(evtName) {
         const listeners = this.listeners.get(evtName);
         if (listeners) {

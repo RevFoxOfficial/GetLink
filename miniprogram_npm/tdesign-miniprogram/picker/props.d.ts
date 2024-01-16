@@ -1,4 +1,3 @@
-import {TdPickerProps} from './type';
-
+import { TdPickerProps } from './type';
 declare const props: TdPickerProps;
 export default props;

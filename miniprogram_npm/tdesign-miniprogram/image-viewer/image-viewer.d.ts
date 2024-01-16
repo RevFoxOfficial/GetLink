@@ -1,5 +1,4 @@
-import {SuperComponent} from '../common/src/index';
-
+import { SuperComponent } from '../common/src/index';
 export default class ImageViewer extends SuperComponent {
     externalClasses: string[];
     properties: {
@@ -57,6 +56,7 @@ export default class ImageViewer extends SuperComponent {
         key: string;
         event: string;
     }[];
+    ready(): void;
     observers: {
         visible(value: any): void;
         closeBtn(v: any): void;
@@ -85,6 +85,4 @@ export default class ImageViewer extends SuperComponent {
         onClose(e: any): void;
         onDelete(): void;
     };
-
-    ready(): void;
 }

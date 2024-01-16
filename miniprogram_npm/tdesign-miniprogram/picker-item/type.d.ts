@@ -8,7 +8,6 @@ export interface TdPickerItemProps {
         value?: PickerItemOption[];
     };
 }
-
 export interface PickerItemOption {
     label: string;
     value: string | number;

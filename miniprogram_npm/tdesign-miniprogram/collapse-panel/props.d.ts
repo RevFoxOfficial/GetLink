@@ -1,4 +1,3 @@
-import {TdCollapsePanelProps} from './type';
-
+import { TdCollapsePanelProps } from './type';
 declare const props: TdCollapsePanelProps;
 export default props;

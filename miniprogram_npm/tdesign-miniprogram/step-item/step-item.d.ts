@@ -1,5 +1,4 @@
-import {RelationsOptions, SuperComponent} from '../common/src/index';
-
+import { SuperComponent, RelationsOptions } from '../common/src/index';
 export default class StepItem extends SuperComponent {
     options: {
         multipleSlots: boolean;
@@ -17,8 +16,11 @@ export default class StepItem extends SuperComponent {
         isLastChild: boolean;
         sequence: string;
     };
+    observers: {
+        status(value: any): void;
+    };
     methods: {
-        updateStatus({current, currentStatus, index, theme, layout, items, sequence}: {
+        updateStatus({ current, currentStatus, index, theme, layout, items, sequence }: {
             current: any;
             currentStatus: any;
             index: any;

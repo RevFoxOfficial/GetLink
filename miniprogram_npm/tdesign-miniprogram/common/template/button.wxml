@@ -1,5 +1,6 @@
 <template name="button">
   <t-button
+    t-id="{{tId}}"
     block="{{block || false}}"
     class="{{class || ''}}"
     t-class="{{externalClass}}"
@@ -32,6 +33,7 @@
     bind:error="onTplButtonTap"
     bind:opensetting="onTplButtonTap"
     bind:launchapp="onTplButtonTap"
+    bind:agreeprivacyauthorization="onTplButtonTap"
     aria-label="{{ariaLabel || ''}}"
     >{{content}}</t-button
   >

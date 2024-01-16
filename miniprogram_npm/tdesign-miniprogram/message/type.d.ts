@@ -60,13 +60,10 @@ export interface TdMessageProps {
         value?: string | object;
     };
 }
-
 export declare type MessageAlignType = 'left' | 'center';
-
 export interface DrawMarquee {
     speed?: number;
     loop?: number;
     delay?: number;
 }
-
 export declare type MessageThemeList = 'info' | 'success' | 'warning' | 'error';

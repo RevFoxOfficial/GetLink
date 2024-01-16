@@ -1,14 +1,12 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent } from '../common/src/index';
 import config from '../common/config';
-
-const {prefix} = config;
+const { prefix } = config;
 const name = `${prefix}-swiper-nav`;
 let SwiperNav = class SwiperNav extends SuperComponent {
     constructor() {
@@ -56,9 +54,9 @@ let SwiperNav = class SwiperNav extends SuperComponent {
         this.methods = {
             nav(e) {
                 var _a;
-                const {dir} = e.target.dataset;
+                const { dir } = e.target.dataset;
                 const source = 'nav';
-                this.triggerEvent('nav-btn-change', {dir, source});
+                this.triggerEvent('nav-btn-change', { dir, source });
                 if (this.$parent) {
                     (_a = this.$parent) === null || _a === void 0 ? void 0 : _a.doNavBtnChange(dir, source);
                 }

@@ -1,17 +1,15 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent } from '../common/src/index';
 import config from '../common/config';
 import props from './props';
 import transition from '../mixins/transition';
-import {calcIcon} from '../common/utils';
-
-const {prefix} = config;
+import { calcIcon } from '../common/utils';
+const { prefix } = config;
 const name = `${prefix}-toast`;
 let Toast = class Toast extends SuperComponent {
     constructor() {
@@ -58,12 +56,8 @@ let Toast = class Toast extends SuperComponent {
                     preventScrollThrough: props.preventScrollThrough.value,
                     theme: props.theme.value,
                 };
-                const data = Object.assign(Object.assign(Object.assign({}, defaultOptions), options), {
-                    visible: true,
-                    isLoading: (options === null || options === void 0 ? void 0 : options.theme) === 'loading',
-                    _icon: calcIcon(typeMapIcon !== null && typeMapIcon !== void 0 ? typeMapIcon : options.icon)
-                });
-                const {duration} = data;
+                const data = Object.assign(Object.assign(Object.assign({}, defaultOptions), options), { visible: true, isLoading: (options === null || options === void 0 ? void 0 : options.theme) === 'loading', _icon: calcIcon(typeMapIcon !== null && typeMapIcon !== void 0 ? typeMapIcon : options.icon) });
+                const { duration } = data;
                 this.setData(data);
                 if (duration > 0) {
                     this.hideTimer = setTimeout(() => {
@@ -75,7 +69,7 @@ let Toast = class Toast extends SuperComponent {
                 var _a, _b;
                 if (!this.data.visible)
                     return;
-                this.setData({visible: false});
+                this.setData({ visible: false });
                 (_b = (_a = this.data) === null || _a === void 0 ? void 0 : _a.close) === null || _b === void 0 ? void 0 : _b.call(_a);
                 this.triggerEvent('close');
             },
@@ -86,8 +80,7 @@ let Toast = class Toast extends SuperComponent {
                 }
                 this.triggerEvent('destory');
             },
-            loop() {
-            },
+            loop() { },
         };
     }
 };

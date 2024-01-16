@@ -26,6 +26,7 @@
   transform: scale(1.5);
 }
 .t-calendar {
+  width: inherit;
   position: relative;
   z-index: 9999;
   background: var(--td-calendar-bg-color, var(--td-bg-color-container, var(--td-font-white-1, #ffffff)));

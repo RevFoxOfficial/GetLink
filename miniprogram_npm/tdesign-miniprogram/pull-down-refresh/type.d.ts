@@ -1,5 +1,4 @@
-import {LoadingProps} from '../loading/index';
-
+import { LoadingProps } from '../loading/index';
 export interface TdPullDownRefreshProps {
     enableBackToTop?: {
         type: BooleanConstructor;

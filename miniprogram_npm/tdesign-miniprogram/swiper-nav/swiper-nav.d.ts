@@ -1,9 +1,7 @@
-import {RelationsOptions, SuperComponent} from '../common/src/index';
-import {TdSwiperNavProps} from './type';
-
+import { SuperComponent, RelationsOptions } from '../common/src/index';
+import { TdSwiperNavProps } from './type';
 export interface SwiperNavProps extends TdSwiperNavProps {
 }
-
 export default class SwiperNav extends SuperComponent {
     externalClasses: string[];
     properties: {

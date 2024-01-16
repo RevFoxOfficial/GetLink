@@ -54,5 +54,9 @@ const props = {
         type: Object,
         value: {},
     },
+    customLocale: {
+        type: String,
+        value: 'zh',
+    },
 };
 export default props;

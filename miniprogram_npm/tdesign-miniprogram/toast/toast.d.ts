@@ -1,7 +1,6 @@
 /// <reference types="node" />
-import {SuperComponent} from '../common/src/index';
-import {ToastOptionsType} from './index';
-
+import { SuperComponent } from '../common/src/index';
+import { ToastOptionsType } from './index';
 declare type Timer = NodeJS.Timeout | null;
 export default class Toast extends SuperComponent {
     externalClasses: string[];

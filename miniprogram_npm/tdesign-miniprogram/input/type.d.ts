@@ -15,6 +15,10 @@ export interface TdInputProps {
         type: null;
         value?: boolean | object;
     };
+    clearTrigger?: {
+        type: StringConstructor;
+        value?: 'always' | 'focus';
+    };
     style?: {
         type: StringConstructor;
         value?: string;
@@ -170,6 +174,5 @@ export interface TdInputProps {
         value?: string;
     };
 }
-
 export declare type InputFormatType = (value: InputValue) => number | string;
 export declare type InputValue = string | number;

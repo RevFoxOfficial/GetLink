@@ -91,6 +91,6 @@ export default class CheckBox extends SuperComponent {
         event: string;
     }[];
     methods: {
-        onChange(e: WechatMiniprogram.TouchEvent): void;
+        handleTap(e: WechatMiniprogram.TouchEvent): void;
     };
 }

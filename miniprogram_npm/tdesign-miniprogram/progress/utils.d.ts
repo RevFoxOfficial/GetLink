@@ -8,5 +8,4 @@ export declare type FromTo = {
 export declare type LinearGradient = {
     direction?: string;
 } & (Gradients | FromTo);
-
 export declare function getBackgroundColor(color: string | string[] | LinearGradient): string;

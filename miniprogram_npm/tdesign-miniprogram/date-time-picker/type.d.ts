@@ -59,8 +59,11 @@ export interface TdDateTimePickerProps {
         type: Object;
         value: {};
     };
+    customLocale?: {
+        type: StringConstructor;
+        value: String;
+    };
 }
-
 export declare type DateTimePickerMode = TimeModeValues | Array<TimeModeValues>;
 export declare type TimeModeValues = 'year' | 'month' | 'date' | 'hour' | 'minute' | 'second';
 export declare type DateValue = string | number;

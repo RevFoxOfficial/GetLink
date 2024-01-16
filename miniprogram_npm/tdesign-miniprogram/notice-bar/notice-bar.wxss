@@ -45,6 +45,7 @@
   white-space: normal;
 }
 .t-notice-bar__content--vertical {
+  display: block;
   height: 44rpx;
   line-height: 44rpx;
 }

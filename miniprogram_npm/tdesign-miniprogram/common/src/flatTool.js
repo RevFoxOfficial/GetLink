@@ -23,7 +23,7 @@ export const toObject = function toObject(something, options = {}) {
     if (!isObject(something))
         return obj;
     const excludes = options.excludes || ['constructor'];
-    const {enumerable = true, configurable = 0, writable = 0} = options;
+    const { enumerable = true, configurable = 0, writable = 0 } = options;
     const defaultDesc = {};
     if (enumerable !== 0)
         defaultDesc.enumerable = enumerable;

@@ -1,5 +1,4 @@
-import type {TCalendarType, TCalendarValue, TDate} from './type';
-
+import type { TDate, TCalendarType, TCalendarValue } from './type';
 export default class TCalendar {
     firstDayOfWeek: number;
     value: TCalendarValue | TCalendarValue[];
@@ -7,16 +6,11 @@ export default class TCalendar {
     minDate: Date;
     maxDate: Date;
     format: (day: TDate) => TDate;
-
     constructor(options?: {});
-
     getTrimValue(): Date | Date[];
-
     getDays(): any[];
-
     getMonths(): any[];
-
-    select({cellType, year, month, date}: {
+    select({ cellType, year, month, date }: {
         cellType: any;
         year: any;
         month: any;

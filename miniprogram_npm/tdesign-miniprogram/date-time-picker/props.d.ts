@@ -1,4 +1,3 @@
-import {TdDateTimePickerProps} from './type';
-
+import { TdDateTimePickerProps } from './type';
 declare const props: TdDateTimePickerProps;
 export default props;

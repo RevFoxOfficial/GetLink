@@ -31,8 +31,8 @@ let Picker = class Picker extends SuperComponent {
             },
             keys(obj) {
                 this.setData({
-                    labelAlias: obj.label || 'label',
-                    valueAlias: obj.value || 'value',
+                    labelAlias: (obj === null || obj === void 0 ? void 0 : obj.label) || 'label',
+                    valueAlias: (obj === null || obj === void 0 ? void 0 : obj.value) || 'value',
                 });
             },
         };

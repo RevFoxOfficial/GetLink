@@ -66,24 +66,28 @@ Page {
     --td-footer-link-dividing-line-color: var(--td-font-gray-3, rgba(255, 255, 255, 0.4));
     --td-navbar-bg-color: var(--td-font-gray-1, #191919);
     --td-navbar-color: var(--td-font-gray-1, rgba(255, 255, 255, 0.9));
-    --td-button-light-disabled-border-color: var(--td-primary-color-1, #001a57);
-    --td-button-light-disabled-bg: var(--td-primary-color-1, #001a57);
-    --td-button-primary-disabled-border-color: var(--td-primary-color-1, #001a57);
-    --td-button-primary-disabled-bg: var(--td-primary-color-1, #001a57);
-    --td-button-light-bg-color: var(--td-primary-color-1, #062E9A);
-    --td-button-light-border-color: var(--td-primary-color-1, #062E9A);
-    --td-button-primary-disabled-color: var(--td-primary-color-3, #003cab);
-    --td-button-light-disabled-color: var(--td-primary-color-3, #003cab);
-    --td-button-light-active-bg-color: var(--td-primary-color-2, #001a57);
-    --td-button-light-active-border-color: var(--td-primary-color-2, #001a57);
-    --td-button-light-color: var(--td-primary-color-7, #f2f3ff);
-    --td-footer-link-color: var(--td-primary-color-7, #2174FF);
-    --td-button-primary-bg-color: var(--td-primary-color-7, #2174FF);
-    --td-button-primary-border-color: var(--td-primary-color-7, #2174FF);
-    --td-result-icon-default-color: var(--td-primary-color-7, #2174FF);
-    --td-result-icon-success-color: var(--td-success-color-5, #07A872);
-    --td-result-icon-warning-color: var(--td-warning-color-5, #ED8139);
-    --td-result-icon-error-color: var(--td-error-color-6, #FB6E77);
+    --td-button-light-disabled-border-color: var(--td-primary-color-1, #1B2F51);
+    --td-button-light-disabled-bg: var(--td-primary-color-1, #1B2F51);
+    --td-button-primary-disabled-border-color: var(--td-primary-color-1, #143975);
+    --td-button-primary-disabled-bg: var(--td-primary-color-1, #143975);
+    --td-button-light-bg-color: var(--td-primary-color-1, #1B2F51);
+    --td-button-light-border-color: var(--td-primary-color-1, #1B2F51);
+    --td-button-primary-disabled-color: var(--td-primary-color-3, rgba(255, 255, 255, 0.2));
+    --td-button-light-disabled-color: var(--td-primary-color-3, #143975);
+    --td-button-light-active-bg-color: var(--td-primary-color-2, #173463);
+    --td-button-light-active-border-color: var(--td-primary-color-2, #173463);
+    --td-button-light-active-color: var(--td-primary-color-2, #4582E6);
+    --td-button-light-color: var(--td-primary-color-7, #4582E6);
+    --td-footer-link-color: var(--td-primary-color-7, #4582E6);
+    --td-button-primary-bg-color: var(--td-primary-color-7, #4582E6);
+    --td-button-primary-border-color: var(--td-primary-color-7, #4582E6);
+    --td-button-primary-active-bg-color: var(--td-primary-color-7, #699EF5);
+    --td-button-primary-active-border-color: var(--td-primary-color-7, #699EF5);
+    --td-button-primary-color: var(--td-primary-color-7, #FFFFFFE5);
+    --td-result-icon-default-color: var(--td-primary-color-7, #4582E6);
+    --td-result-icon-success-color: var(--td-success-color-5, #059465);
+    --td-result-icon-warning-color: var(--td-warning-color-5, #CF6E2D);
+    --td-result-icon-error-color: var(--td-error-color-6, #C64751);
   }
 }
 

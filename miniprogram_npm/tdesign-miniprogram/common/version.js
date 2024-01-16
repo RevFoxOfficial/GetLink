@@ -1,12 +1,10 @@
 let systemInfo;
-
 function getSystemInfo() {
     if (systemInfo == null) {
         systemInfo = wx.getSystemInfoSync();
     }
     return systemInfo;
 }
-
 function compareVersion(v1, v2) {
     v1 = v1.split('.');
     v2 = v2.split('.');
@@ -22,23 +20,21 @@ function compareVersion(v1, v2) {
         const num2 = parseInt(v2[i]);
         if (num1 > num2) {
             return 1;
-        } else if (num1 < num2) {
+        }
+        else if (num1 < num2) {
             return -1;
         }
     }
     return 0;
 }
-
 function judgeByVersion(version) {
     const currentSDKVersion = getSystemInfo().SDKVersion;
     return compareVersion(currentSDKVersion, version) >= 0;
 }
-
 export function canIUseFormFieldButton() {
     const version = '2.10.3';
     return judgeByVersion(version);
 }
-
 export function canUseVirtualHost() {
     return judgeByVersion('2.19.2');
 }

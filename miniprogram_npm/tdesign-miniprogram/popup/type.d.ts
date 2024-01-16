@@ -1,5 +1,4 @@
-import {TdTransitionProps} from '../transition/index';
-
+import { TdTransitionProps } from '../transition/index';
 export interface TdPopupProps {
     closeBtn?: {
         type: BooleanConstructor;
@@ -58,7 +57,6 @@ export interface TdPopupProps {
         value?: number;
     };
 }
-
 export interface PopupVisibleChangeContext {
     trigger: 'close-btn' | 'overlay';
 }

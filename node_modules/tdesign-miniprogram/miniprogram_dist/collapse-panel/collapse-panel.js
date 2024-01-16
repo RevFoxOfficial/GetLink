@@ -21,14 +21,12 @@ let CollapsePanel = class CollapsePanel extends SuperComponent {
             '../collapse/collapse': {
                 type: 'ancestor',
                 linked(target) {
-                    this.parent = target;
-                    const { value, defaultExpandAll, expandMutex, expandIcon, disabled } = target.properties;
-                    const activeValues = defaultExpandAll && !expandMutex ? [this.properties.value] : value;
+                    const { value, expandIcon, disabled } = target.properties;
                     this.setData({
                         ultimateExpandIcon: expandIcon || this.properties.expandIcon,
                         ultimateDisabled: this.properties.disabled == null ? disabled : this.properties.disabled,
                     });
-                    this.updateExpanded(activeValues);
+                    this.updateExpanded(value);
                 },
             },
         };
@@ -42,16 +40,13 @@ let CollapsePanel = class CollapsePanel extends SuperComponent {
             ultimateDisabled: false,
         };
         this.methods = {
-            set(data) {
-                this.setData(data);
-                return new Promise((resolve) => wx.nextTick(resolve));
-            },
-            updateExpanded(activeValues) {
-                if (!this.parent) {
+            updateExpanded(activeValues = []) {
+                if (!this.$parent || this.data.ultimateDisabled) {
                     return;
                 }
                 const { value } = this.properties;
-                const expanded = activeValues.includes(value);
+                const { defaultExpandAll } = this.$parent.data;
+                const expanded = defaultExpandAll ? !this.data.expanded : activeValues.includes(value);
                 if (expanded === this.properties.expanded)
                     return;
                 this.setData({ expanded });
@@ -79,7 +74,12 @@ let CollapsePanel = class CollapsePanel extends SuperComponent {
                 const { value } = this.properties;
                 if (ultimateDisabled)
                     return;
-                this.parent.switch(value);
+                if (this.$parent.data.defaultExpandAll) {
+                    this.updateExpanded();
+                }
+                else {
+                    this.$parent.switch(value);
+                }
             },
         };
     }

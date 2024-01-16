@@ -1,16 +1,14 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent } from '../common/src/index';
 import config from '../common/config';
 import props from './props';
-import {getCharacterLength} from '../common/utils';
-
-const {prefix} = config;
+import { getCharacterLength } from '../common/utils';
+const { prefix } = config;
 const name = `${prefix}-textarea`;
 let Textarea = class Textarea extends SuperComponent {
     constructor() {
@@ -38,21 +36,21 @@ let Textarea = class Textarea extends SuperComponent {
         };
         this.lifetimes = {
             ready() {
-                const {value} = this.properties;
+                const { value } = this.properties;
                 this.updateValue(value == null ? '' : value);
             },
         };
         this.methods = {
             updateCount(val) {
-                const {maxcharacter, maxlength} = this.properties;
-                const {count} = this.calculateValue(val, maxcharacter, maxlength);
+                const { maxcharacter, maxlength } = this.properties;
+                const { count } = this.calculateValue(val, maxcharacter, maxlength);
                 this.setData({
                     count,
                 });
             },
             updateValue(val) {
-                const {maxcharacter, maxlength} = this.properties;
-                const {value, count} = this.calculateValue(val, maxcharacter, maxlength);
+                const { maxcharacter, maxlength } = this.properties;
+                const { value, count } = this.calculateValue(val, maxcharacter, maxlength);
                 this.setData({
                     value,
                     count,
@@ -60,14 +58,14 @@ let Textarea = class Textarea extends SuperComponent {
             },
             calculateValue(value, maxcharacter, maxlength) {
                 if (maxcharacter > 0 && !Number.isNaN(maxcharacter)) {
-                    const {length, characters} = getCharacterLength('maxcharacter', value, maxcharacter);
+                    const { length, characters } = getCharacterLength('maxcharacter', value, maxcharacter);
                     return {
                         value: characters,
                         count: length,
                     };
                 }
                 if (maxlength > 0 && !Number.isNaN(maxlength)) {
-                    const {length, characters} = getCharacterLength('maxlength', value, maxlength);
+                    const { length, characters } = getCharacterLength('maxlength', value, maxlength);
                     return {
                         value: characters,
                         count: length,
@@ -79,9 +77,9 @@ let Textarea = class Textarea extends SuperComponent {
                 };
             },
             onInput(event) {
-                const {value} = event.detail;
+                const { value } = event.detail;
                 this.updateValue(value);
-                this.triggerEvent('change', {value: this.data.value});
+                this.triggerEvent('change', { value: this.data.value });
             },
             onFocus(event) {
                 this.triggerEvent('focus', Object.assign({}, event.detail));

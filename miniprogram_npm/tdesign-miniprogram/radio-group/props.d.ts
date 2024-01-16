@@ -1,4 +1,3 @@
-import {TdRadioGroupProps} from './type';
-
+import { TdRadioGroupProps } from './type';
 declare const props: TdRadioGroupProps;
 export default props;

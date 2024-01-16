@@ -1,5 +1,4 @@
-import {BadgeProps} from '../badge/index';
-
+import { BadgeProps } from '../badge/index';
 export interface TdAvatarProps {
     alt?: {
         type: StringConstructor;
@@ -46,5 +45,4 @@ export interface TdAvatarProps {
         value?: string;
     };
 }
-
 export declare type ShapeEnum = 'circle' | 'round';

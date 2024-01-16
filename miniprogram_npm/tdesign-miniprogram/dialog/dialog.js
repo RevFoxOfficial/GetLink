@@ -1,16 +1,14 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent } from '../common/src/index';
 import config from '../common/config';
 import props from './props';
-import {isObject, toCamel} from '../common/utils';
-
-const {prefix} = config;
+import { isObject, toCamel } from '../common/utils';
+const { prefix } = config;
 const name = `${prefix}-dialog`;
 let Dialog = class Dialog extends SuperComponent {
     constructor() {
@@ -34,16 +32,17 @@ let Dialog = class Dialog extends SuperComponent {
         };
         this.observers = {
             'confirmBtn, cancelBtn'(confirm, cancel) {
-                const {prefix, classPrefix, buttonLayout} = this.data;
-                const rect = {buttonVariant: 'text'};
+                const { prefix, classPrefix, buttonLayout } = this.data;
+                const rect = { buttonVariant: 'text' };
                 const useBaseVariant = [confirm, cancel].some((item) => isObject(item) && item.variant && item.variant !== 'text');
-                const buttonMap = {confirm, cancel};
+                const buttonMap = { confirm, cancel };
                 const cls = [`${classPrefix}__button`];
                 const externalCls = [];
                 if (useBaseVariant) {
                     rect.buttonVariant = 'base';
                     cls.push(`${classPrefix}__button--${buttonLayout}`);
-                } else {
+                }
+                else {
                     cls.push(`${classPrefix}__button--text`);
                     externalCls.push(`${classPrefix}-button`);
                 }
@@ -59,10 +58,12 @@ let Dialog = class Dialog extends SuperComponent {
                         base.theme = 'light';
                     }
                     if (typeof btn === 'string') {
-                        rect[`_${key}`] = Object.assign(Object.assign({}, base), {content: btn});
-                    } else if (btn && typeof btn === 'object') {
+                        rect[`_${key}`] = Object.assign(Object.assign({}, base), { content: btn });
+                    }
+                    else if (btn && typeof btn === 'object') {
                         rect[`_${key}`] = Object.assign(Object.assign({}, base), btn);
-                    } else {
+                    }
+                    else {
                         rect[`_${key}`] = null;
                     }
                 });
@@ -73,7 +74,7 @@ let Dialog = class Dialog extends SuperComponent {
             onTplButtonTap(e) {
                 var _a, _b;
                 const evtType = e.type;
-                const {type, extra} = e.target.dataset;
+                const { type, extra } = e.target.dataset;
                 const button = this.data[`_${type}`];
                 const cbName = `bind${evtType}`;
                 if (type === 'action') {
@@ -103,7 +104,7 @@ let Dialog = class Dialog extends SuperComponent {
                 }
             },
             onCancel() {
-                this.triggerEvent('close', {trigger: 'cancel'});
+                this.triggerEvent('close', { trigger: 'cancel' });
                 this.triggerEvent('cancel');
                 if (this._onCancel) {
                     this._onCancel();
@@ -111,22 +112,22 @@ let Dialog = class Dialog extends SuperComponent {
                 }
             },
             onClose() {
-                this.triggerEvent('close', {trigger: 'close-btn'});
+                this.triggerEvent('close', { trigger: 'close-btn' });
                 this.close();
             },
             close() {
-                this.setData({visible: false});
+                this.setData({ visible: false });
             },
             overlayClick() {
                 if (this.properties.closeOnOverlayClick) {
-                    this.triggerEvent('close', {trigger: 'overlay'});
+                    this.triggerEvent('close', { trigger: 'overlay' });
                 }
                 this.triggerEvent('overlay-click');
             },
             onActionTap(index) {
-                this.triggerEvent('action', {index});
+                this.triggerEvent('action', { index });
                 if (this._onAction) {
-                    this._onAction({index});
+                    this._onAction({ index });
                     this.close();
                 }
             },

@@ -22,6 +22,7 @@ export default class DropdownMenu extends SuperComponent {
     };
     observers: {
         arrowIcon(v: any): void;
+        activeIdx(v: number): void;
     };
     methods: {
         toggle(index: number): void;

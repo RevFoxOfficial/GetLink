@@ -1,10 +1,8 @@
 /// <reference types="miniprogram-api-typings" />
-import {SuperComponent} from '../common/src/index';
-import {TdCalendarProps} from './type';
-
+import { SuperComponent } from '../common/src/index';
+import { TdCalendarProps } from './type';
 export interface CalendarProps extends TdCalendarProps {
 }
-
 export default class Calendar extends SuperComponent {
     externalClasses: string[];
     options: WechatMiniprogram.Component.ComponentOptions;

@@ -1,5 +1,4 @@
-import {ComponentsOptionsType, SuperComponent} from '../common/src/index';
-
+import { SuperComponent, ComponentsOptionsType } from '../common/src/index';
 export default class NoticeBar extends SuperComponent {
     externalClasses: string[];
     options: ComponentsOptionsType;
@@ -27,6 +26,7 @@ export default class NoticeBar extends SuperComponent {
         show(): void;
         clearNoticeBarAnimation(): void;
         setPrefixIcon(v: any): void;
+        onChange(e: WechatMiniprogram.SwiperChange): void;
         clickPrefixIcon(): void;
         clickContent(): void;
         clickSuffixIcon(): void;

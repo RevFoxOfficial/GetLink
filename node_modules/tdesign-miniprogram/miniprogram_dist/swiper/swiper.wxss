@@ -44,6 +44,5 @@
   transition: all 0.3s ease;
 }
 .t-swiper__image-host {
-  display: block;
   width: 100%;
 }

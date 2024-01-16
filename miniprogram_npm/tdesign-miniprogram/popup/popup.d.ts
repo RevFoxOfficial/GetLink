@@ -1,6 +1,5 @@
-import {TdPopupProps} from './type';
-import {SuperComponent} from '../common/src/index';
-
+import { TdPopupProps } from './type';
+import { SuperComponent } from '../common/src/index';
 export declare type PopupProps = TdPopupProps;
 export default class Popup extends SuperComponent {
     externalClasses: string[];
@@ -14,7 +13,6 @@ export default class Popup extends SuperComponent {
         classPrefix: string;
     };
     methods: {
-        onStopPropagation(): void;
         handleOverlayClick(): void;
         handleClose(): void;
     };

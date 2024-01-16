@@ -62,6 +62,8 @@
   color: var(--td-search-text-color, var(--td-font-gray-1, rgba(0, 0, 0, 0.9)));
   font-size: var(--td-search-font-size, var(--td-font-size-m, 32rpx));
   padding-left: 10rpx;
+  min-height: 48rpx;
+  line-height: 48rpx;
 }
 .t-search__input-box .t-icon {
   color: var(--td-search-icon-color, var(--td-font-gray-3, rgba(0, 0, 0, 0.4)));

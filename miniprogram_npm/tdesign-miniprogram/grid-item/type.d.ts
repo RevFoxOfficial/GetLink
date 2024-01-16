@@ -1,5 +1,4 @@
-import {BadgeProps} from '../badge/index';
-
+import { BadgeProps } from '../badge/index';
 export interface TdGridItemProps {
     badgeProps?: {
         type: ObjectConstructor;

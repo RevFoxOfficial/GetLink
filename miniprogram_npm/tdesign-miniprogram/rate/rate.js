@@ -1,16 +1,14 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent } from '../common/src/index';
 import config from '../common/config';
 import props from './props';
-import {getRect, unitConvert} from '../common/utils';
-
-const {prefix} = config;
+import { unitConvert, getRect } from '../common/utils';
+const { prefix } = config;
 const name = `${prefix}-rate`;
 let Rate = class Rate extends SuperComponent {
     constructor() {
@@ -35,11 +33,11 @@ let Rate = class Rate extends SuperComponent {
         };
         this.methods = {
             onTouch(e, eventType) {
-                const {count, allowHalf, gap, value: currentValue, size} = this.properties;
+                const { count, allowHalf, gap, value: currentValue, size } = this.properties;
                 const [touch] = e.changedTouches;
                 const margin = unitConvert(gap);
                 getRect(this, `.${name}__wrapper`).then((rect) => {
-                    const {width, left} = rect;
+                    const { width, left } = rect;
                     const starWidth = (width - (count - 1) * margin) / count;
                     const offsetX = touch.pageX - left;
                     const num = (offsetX + margin) / (starWidth + margin);
@@ -48,7 +46,8 @@ let Rate = class Rate extends SuperComponent {
                     let value = remainder <= 0.5 && allowHalf ? integral + 0.5 : integral + 1;
                     if (value > count) {
                         value = count;
-                    } else if (value < 0) {
+                    }
+                    else if (value < 0) {
                         value = 0;
                     }
                     if (eventType === 'move' || (eventType === 'tap' && allowHalf)) {
@@ -61,7 +60,7 @@ let Rate = class Rate extends SuperComponent {
                         });
                     }
                     if (value !== currentValue) {
-                        this._trigger('change', {value});
+                        this._trigger('change', { value });
                     }
                     if (this.touchEnd) {
                         this.hideTips();
@@ -84,16 +83,16 @@ let Rate = class Rate extends SuperComponent {
             },
             hideTips() {
                 if (this.data.actionType === 'move') {
-                    this.setData({tipsVisible: false, scaleIndex: -1});
+                    this.setData({ tipsVisible: false, scaleIndex: -1 });
                 }
             },
             onSelect(e) {
-                const {value} = e.currentTarget.dataset;
-                const {actionType} = this.data;
+                const { value } = e.currentTarget.dataset;
+                const { actionType } = this.data;
                 if (actionType === 'move')
                     return;
-                this._trigger('change', {value});
-                setTimeout(() => this.setData({tipsVisible: false, scaleIndex: -1}), 300);
+                this._trigger('change', { value });
+                setTimeout(() => this.setData({ tipsVisible: false, scaleIndex: -1 }), 300);
             },
             showAlertText() {
                 if (this.data.isVisibleToScreenReader === true)

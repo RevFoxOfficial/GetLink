@@ -1,5 +1,4 @@
-import {SuperComponent} from '../common/src/index';
-
+import { SuperComponent } from '../common/src/index';
 export default class Switch extends SuperComponent {
     externalClasses: string[];
     behaviors: string[];

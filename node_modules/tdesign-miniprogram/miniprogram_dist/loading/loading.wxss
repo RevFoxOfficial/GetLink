@@ -91,6 +91,7 @@
   animation-fill-mode: both;
 }
 .t-loading__text {
+  color: var(--td-loading-text-color, inherit);
   font-size: var(--td-loading-text-font-size, 24rpx);
   line-height: var(--td-loading-text-line-height, 40rpx);
 }

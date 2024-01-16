@@ -1,5 +1,4 @@
-import {SizeEnum} from '../common/common';
-
+import { SizeEnum } from '../common/common';
 export interface TdCheckTagProps {
     checked?: {
         type: BooleanConstructor;

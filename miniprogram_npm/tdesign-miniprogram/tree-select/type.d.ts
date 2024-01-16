@@ -1,5 +1,4 @@
-import {KeysType, TreeOptionData} from '../common/common';
-
+import { TreeOptionData, KeysType } from '../common/common';
 export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptionData> {
     style?: {
         type: StringConstructor;
@@ -30,5 +29,4 @@ export interface TdTreeSelectProps<DataOption extends TreeOptionData = TreeOptio
         value?: TreeSelectValue;
     };
 }
-
 export declare type TreeSelectValue = string | number | Array<TreeSelectValue>;

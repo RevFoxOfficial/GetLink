@@ -28,9 +28,7 @@ export interface TdSkeletonProps {
         value?: 'avatar' | 'image' | 'text' | 'paragraph';
     };
 }
-
 export declare type SkeletonRowCol = Array<Number | SkeletonRowColObj | Array<SkeletonRowColObj>>;
-
 export interface SkeletonRowColObj {
     width?: string;
     size?: string;

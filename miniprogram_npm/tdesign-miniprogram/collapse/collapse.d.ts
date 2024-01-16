@@ -1,9 +1,7 @@
-import {RelationsOptions, SuperComponent} from '../common/src/index';
-import type {CollapseValue, TdCollapseProps} from './type';
-
+import { SuperComponent, RelationsOptions } from '../common/src/index';
+import type { CollapseValue, TdCollapseProps } from './type';
 export interface CollapseProps extends TdCollapseProps {
 }
-
 export default class Collapse extends SuperComponent {
     options: {
         addGlobalClass: boolean;

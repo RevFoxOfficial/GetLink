@@ -1,28 +1,26 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent } from '../common/src/index';
 import config from '../common/config';
 import props from './props';
-import {classNames, isNumber} from '../common/utils';
-
-const {prefix} = config;
+import { isNumber, classNames } from '../common/utils';
+const { prefix } = config;
 const name = `${prefix}-skeleton`;
 const ThemeMap = {
-    avatar: [{type: 'circle', size: '96rpx'}],
-    image: [{type: 'rect', size: '144rpx'}],
+    avatar: [{ type: 'circle', size: '96rpx' }],
+    image: [{ type: 'rect', size: '144rpx' }],
     text: [
         [
-            {width: '24%', height: '32rpx', marginRight: '32rpx'},
-            {width: '76%', height: '32rpx'},
+            { width: '24%', height: '32rpx', marginRight: '32rpx' },
+            { width: '76%', height: '32rpx' },
         ],
         1,
     ],
-    paragraph: [1, 1, 1, {width: '55%'}],
+    paragraph: [1, 1, 1, { width: '55%' }],
 };
 let Skeleton = class Skeleton extends SuperComponent {
     constructor() {
@@ -46,36 +44,31 @@ let Skeleton = class Skeleton extends SuperComponent {
         };
         this.methods = {
             init() {
-                const {theme, rowCol} = this.properties;
+                const { theme, rowCol } = this.properties;
                 const rowCols = [];
                 if (rowCol.length) {
                     rowCols.push(...rowCol);
-                } else {
+                }
+                else {
                     rowCols.push(...ThemeMap[theme || 'text']);
                 }
                 const parsedRowcols = rowCols.map((item) => {
                     if (isNumber(item)) {
                         return [
                             {
-                                class: this.getColItemClass({type: 'text'}),
+                                class: this.getColItemClass({ type: 'text' }),
                                 style: {},
                             },
                         ];
                     }
                     if (Array.isArray(item)) {
                         return item.map((col) => {
-                            return Object.assign(Object.assign({}, col), {
-                                class: this.getColItemClass(col),
-                                style: this.getColItemStyle(col)
-                            });
+                            return Object.assign(Object.assign({}, col), { class: this.getColItemClass(col), style: this.getColItemStyle(col) });
                         });
                     }
                     const nItem = item;
                     return [
-                        Object.assign(Object.assign({}, nItem), {
-                            class: this.getColItemClass(nItem),
-                            style: this.getColItemStyle(nItem)
-                        }),
+                        Object.assign(Object.assign({}, nItem), { class: this.getColItemClass(nItem), style: this.getColItemStyle(nItem) }),
                     ];
                 });
                 this.setData({
@@ -107,7 +100,8 @@ let Skeleton = class Skeleton extends SuperComponent {
                         const px = isNumber(obj[name]) ? `${obj[name]}px` : obj[name];
                         if (name === 'size') {
                             [style.width, style.height] = [px, px];
-                        } else {
+                        }
+                        else {
                             style[name] = px;
                         }
                     }

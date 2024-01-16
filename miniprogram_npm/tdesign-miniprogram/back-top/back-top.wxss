@@ -39,7 +39,7 @@
 .t-back-top--fixed {
   position: fixed;
   right: var(--td-spacer, 16rpx);
-  bottom: var(--td-spacer-2, 32rpx);
+  bottom: calc(var(--td-spacer-2, 32rpx) + env(safe-area-inset-bottom));
 }
 .t-back-top--round,
 .t-back-top--round-dark {

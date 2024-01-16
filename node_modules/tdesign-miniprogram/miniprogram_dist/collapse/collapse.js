@@ -19,9 +19,6 @@ let Collapse = class Collapse extends SuperComponent {
         this.relations = {
             '../collapse-panel/collapse-panel': {
                 type: 'descendant',
-                linked() {
-                    this.updateExpanded();
-                },
             },
         };
         this.controlledProps = [

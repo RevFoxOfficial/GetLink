@@ -1,4 +1,3 @@
-import {TdTabsProps} from './type';
-
+import { TdTabsProps } from './type';
 declare const props: TdTabsProps;
 export default props;

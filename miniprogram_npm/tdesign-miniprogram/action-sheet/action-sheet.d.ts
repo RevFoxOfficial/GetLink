@@ -1,5 +1,4 @@
-import {SuperComponent} from '../common/src/index';
-
+import { SuperComponent } from '../common/src/index';
 export default class ActionSheet extends SuperComponent {
     static show: (options: import("./show").ActionSheetShowOption) => WechatMiniprogram.Component.TrivialInstance;
     externalClasses: string[];
@@ -61,18 +60,17 @@ export default class ActionSheet extends SuperComponent {
         key: string;
         event: string;
     }[];
+    ready(): void;
     methods: {
         onSwiperChange(e: WechatMiniprogram.TouchEvent): void;
         splitGridThemeActions(): void;
         show(options: any): void;
         memoInitialData(): void;
         close(): void;
-        onPopupVisibleChange({detail}: {
+        onPopupVisibleChange({ detail }: {
             detail: any;
         }): void;
         onSelect(event: WechatMiniprogram.TouchEvent): void;
         onCancel(): void;
     };
-
-    ready(): void;
 }

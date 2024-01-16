@@ -17,7 +17,7 @@ export const isSameDate = (date1, date2) => {
     return keys.every((key) => date1[key] === date2[key]);
 };
 export const getMonthDateRect = (date) => {
-    const {year, month} = getDateRect(date);
+    const { year, month } = getDateRect(date);
     const firstDay = new Date(year, month, 1);
     const weekdayOfFirstDay = firstDay.getDay();
     const lastDate = new Date(+new Date(year, month + 1, 1) - 24 * 3600 * 1000).getDate();
@@ -34,7 +34,7 @@ export const getDate = (...args) => {
     if (args.length === 0)
         return now;
     if (args.length === 1 && args[0] <= 1000) {
-        const {year, month, date} = getDateRect(now);
+        const { year, month, date } = getDateRect(now);
         return new Date(year, month + args[0], date);
     }
     return Date.apply(null, args);

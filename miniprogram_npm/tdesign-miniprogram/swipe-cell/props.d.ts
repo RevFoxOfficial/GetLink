@@ -1,4 +1,3 @@
-import {TdSwipeCellProps} from './type';
-
+import { TdSwipeCellProps } from './type';
 declare const props: TdSwipeCellProps;
 export default props;

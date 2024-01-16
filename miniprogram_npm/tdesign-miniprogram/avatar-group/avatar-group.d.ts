@@ -1,5 +1,4 @@
-import {RelationsOptions, SuperComponent} from '../common/src/index';
-
+import { SuperComponent, RelationsOptions } from '../common/src/index';
 export default class AvatarGroup extends SuperComponent {
     externalClasses: string[];
     properties: import("./type").TdAvatarGroupProps;

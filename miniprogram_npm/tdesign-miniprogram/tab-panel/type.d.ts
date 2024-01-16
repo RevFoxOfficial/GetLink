@@ -1,5 +1,4 @@
-import {TabValue} from '../tabs/index';
-
+import { TabValue } from '../tabs/index';
 export interface TdTabPanelProps {
     badgeProps?: {
         type: ObjectConstructor;

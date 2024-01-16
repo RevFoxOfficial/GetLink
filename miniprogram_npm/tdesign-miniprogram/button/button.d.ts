@@ -1,9 +1,7 @@
-import {SuperComponent} from '../common/src/index';
-import type {TdButtonProps} from './type';
-
+import { SuperComponent } from '../common/src/index';
+import type { TdButtonProps } from './type';
 export interface ButtonProps extends TdButtonProps {
 }
-
 export default class Button extends SuperComponent {
     externalClasses: string[];
     behaviors: string[];
@@ -32,6 +30,7 @@ export default class Button extends SuperComponent {
         opensetting(e: any): void;
         launchapp(e: any): void;
         chooseavatar(e: any): void;
+        agreeprivacyauthorization(e: any): void;
         handleTap(e: any): void;
     };
 }

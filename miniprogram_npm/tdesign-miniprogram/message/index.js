@@ -9,15 +9,14 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import {MessageType} from './message.interface';
-import {getInstance} from '../common/utils';
-
+import { MessageType } from './message.interface';
+import { getInstance } from '../common/utils';
 const showMessage = function (options, theme = MessageType.info) {
-    const {context, selector = '#t-message'} = options, otherOptions = __rest(options, ["context", "selector"]);
+    const { context, selector = '#t-message' } = options, otherOptions = __rest(options, ["context", "selector"]);
     const instance = getInstance(context, selector);
     if (instance) {
         instance.resetData(() => {
-            instance.setData(Object.assign({theme}, otherOptions), instance.show.bind(instance));
+            instance.setData(Object.assign({ theme }, otherOptions), instance.show.bind(instance));
         });
         return instance;
     }
@@ -37,7 +36,7 @@ export default {
         return showMessage(options, MessageType.error);
     },
     hide(options) {
-        const {context, selector = '#t-message'} = Object.assign({}, options);
+        const { context, selector = '#t-message' } = Object.assign({}, options);
         const instance = getInstance(context, selector);
         if (!instance) {
             return;

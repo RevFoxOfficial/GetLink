@@ -1,4 +1,3 @@
-import {TdTabBarItemProps} from './type';
-
+import { TdTabBarItemProps } from './type';
 declare const props: TdTabBarItemProps;
 export default props;

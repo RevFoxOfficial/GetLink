@@ -1,5 +1,4 @@
-import {RelationsOptions, SuperComponent} from '../common/src/index';
-
+import { SuperComponent, RelationsOptions } from '../common/src/index';
 export default class BackTop extends SuperComponent {
     externalClasses: string[];
     options: {
@@ -11,9 +10,11 @@ export default class BackTop extends SuperComponent {
         prefix: string;
         classPrefix: string;
         _icon: any;
+        hidden: boolean;
     };
     observers: {
         icon(): void;
+        scrollTop(value: number): void;
     };
     lifetimes: {
         ready(): void;

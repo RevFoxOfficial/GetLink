@@ -17,9 +17,9 @@
         data="{{tClass: prefix + '-class-prefix-icon', ariaHidden: true, ..._prefixIcon}}"
       />
     </view>
-    <view class="{{classPrefix}}__label" aria-hidden>
+    <view class="{{classPrefix}}__label {{prefix}}-class-label" aria-hidden>
       <slot name="label" />
-      <text wx:if="{{label}}" class="{{prefix}}-class-label">{{label}}</text>
+      <block wx:if="{{label}}">{{label}}</block>
     </view>
   </view>
 
@@ -68,7 +68,7 @@
           安卓不会播报aria-label，会播报aria-roledescription的内容
         -->
       <view
-        wx:if="{{_clearIcon && value.length > 0}}"
+        wx:if="{{_clearIcon && value.length > 0 && showClearIcon}}"
         class="{{classPrefix}}__wrap--clearable-icon"
         bind:touchstart="clearInput"
       >

@@ -11,7 +11,5 @@ declare type ControlOption = {
     changeEventName?: string;
     strict?: boolean;
 };
-
 declare function useControl(this: any, option?: ControlOption): ControlInstance;
-
-export {ControlOption, ControlInstance, useControl};
+export { ControlOption, ControlInstance, useControl };

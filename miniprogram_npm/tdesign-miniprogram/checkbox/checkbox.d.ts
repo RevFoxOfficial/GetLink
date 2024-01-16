@@ -1,5 +1,4 @@
-import {ComponentsOptionsType, RelationsOptions, SuperComponent} from '../common/src/index';
-
+import { SuperComponent, ComponentsOptionsType, RelationsOptions } from '../common/src/index';
 export default class CheckBox extends SuperComponent {
     externalClasses: string[];
     behaviors: string[];
@@ -92,6 +91,6 @@ export default class CheckBox extends SuperComponent {
         event: string;
     }[];
     methods: {
-        onChange(e: WechatMiniprogram.TouchEvent): void;
+        handleTap(e: WechatMiniprogram.TouchEvent): void;
     };
 }

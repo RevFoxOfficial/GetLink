@@ -16,11 +16,7 @@ export declare type ToastOptionsType = {
     direction?: ToastDirectionType;
     close?: () => void;
 };
-
 declare function Toast(options: ToastOptionsType): void;
-
 declare function showToast(options?: ToastOptionsType): void;
-
 declare function hideToast(options?: ToastOptionsType): void;
-
-export {Toast as default, showToast, hideToast};
+export { Toast as default, showToast, hideToast };

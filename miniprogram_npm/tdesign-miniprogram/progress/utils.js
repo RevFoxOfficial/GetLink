@@ -9,7 +9,6 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-
 export function getBackgroundColor(color) {
     if (typeof color === 'string') {
         return color;
@@ -20,7 +19,7 @@ export function getBackgroundColor(color) {
         }
         return `linear-gradient( ${color.join(',')} )`;
     }
-    const {from, to, direction = 'to right'} = color, rest = __rest(color, ["from", "to", "direction"]);
+    const { from, to, direction = 'to right' } = color, rest = __rest(color, ["from", "to", "direction"]);
     let keys = Object.keys(rest);
     if (keys.length) {
         keys = keys.sort((a, b) => parseFloat(a.substr(0, a.length - 1)) - parseFloat(b.substr(0, b.length - 1)));

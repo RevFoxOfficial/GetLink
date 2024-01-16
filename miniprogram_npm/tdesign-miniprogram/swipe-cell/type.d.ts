@@ -22,12 +22,10 @@ export interface TdSwipeCellProps {
         value?: Array<SwipeActionItem>;
     };
 }
-
 export interface SwipeActionItem {
     text: string;
     className?: string;
     style?: string;
     onClick?: () => void;
-
     [key: string]: any;
 }

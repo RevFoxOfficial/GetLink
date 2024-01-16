@@ -97,9 +97,9 @@
   border-radius: calc(var(--td-badge-large-height, 40rpx) / 2);
 }
 .t-badge__content:not(:empty) + .t-has-count {
-  transform: translate(50%, -50%);
+  transform: translate(-50%, -50%);
   position: absolute;
-  right: 0;
+  left: 100%;
   top: 0;
 }
 .t-badge__content-text {

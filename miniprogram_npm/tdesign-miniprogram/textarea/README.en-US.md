@@ -4,33 +4,33 @@
 
 ### Textarea Props
 
- name             | type          | default   | description                                                                                  | required 
-------------------|---------------|-----------|----------------------------------------------------------------------------------------------|----------
- adjust-position  | Boolean       | true      | \-                                                                                           | N        
- autofocus        | Boolean       | false     | \-                                                                                           | N        
- autosize         | Boolean       | false     | \-                                                                                           | N        
- confirm-hold     | Boolean       | false     | \-                                                                                           | N        
- confirm-type     | String        | done      | options：send/search/next/go/done。Typescript：`'send' \| 'search' \| 'next' \| 'go' \| 'done'` | N        
- cursor-spacing   | Number        | 0         | \-                                                                                           | N        
- disabled         | Boolean       | false     | \-                                                                                           | N        
- external-classes | Array         | -         | `['t-class', 't-class-textarea', 't-class-label']`                                           | N        
- focus            | Boolean       | false     | \-                                                                                           | N        
- label            | String / Slot | -         | \-                                                                                           | N        
- maxcharacter     | Number        | -         | \-                                                                                           | N        
- maxlength        | Number        | -         | \-                                                                                           | N        
- placeholder      | String        | undefined | \-                                                                                           | N        
- value            | String        | -         | \-                                                                                           | N        
- default-value    | String        | undefined | uncontrolled property                                                                        | N        
+name | type | default | description | required
+-- | -- | -- | -- | --
+adjust-position | Boolean | true | \- | N
+autofocus | Boolean | false | \- | N
+autosize | Boolean | false | \- | N
+confirm-hold | Boolean | false | \- | N
+confirm-type | String | return | options：return/send/search/next/go/done。Typescript：`'return' \| 'send' \| 'search' \| 'next' \| 'go' \| 'done'` | N
+cursor-spacing | Number | 0 | \- | N
+disabled | Boolean | false | \- | N
+external-classes | Array | - | `['t-class', 't-class-textarea', 't-class-label']` | N
+focus | Boolean | false | \- | N
+label | String / Slot | - | \- | N
+maxcharacter | Number | - | \- | N
+maxlength | Number | - | \- | N
+placeholder | String | undefined | \- | N
+value | String | null | \- | N
+default-value | String | '' | uncontrolled property | N
 
 ### Textarea Events
 
- name        | params                   | description 
--------------|--------------------------|-------------
- blur        | `(value: TextareaValue)` | \-          
- change      | `(value: TextareaValue)` | \-          
- enter       | `(value: TextareaValue)` | \-          
- focus       | `(value: TextareaValue)` | \-          
- line-change | `(value: TextareaValue)` | \-          
+name | params | description
+-- | -- | --
+blur | `(value: TextareaValue)` | \-
+change | `(value: TextareaValue)` | \-
+enter | `(value: TextareaValue)` | \-
+focus | `(value: TextareaValue)` | \-
+line-change | `(value: TextareaValue)` | \-
 
 ### CSS Variables
 
@@ -44,4 +44,4 @@ Name | Default Value | Description
 --td-textarea-indicator-text-color | @font-gray-3 | -
 --td-textarea-label-color | @font-gray-1 | -
 --td-textarea-placeholder-color | @font-gray-3 | -
---td-textarea-text-color | @font-gray-1 | - 
+--td-textarea-text-color | @font-gray-1 | -

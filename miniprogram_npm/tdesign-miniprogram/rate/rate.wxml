@@ -24,6 +24,7 @@
       t-class="{{prefix}}-class-icon"
       name="{{utils.getIconName(defaultValue, value, index, icon)}}"
       size="{{ size }}"
+      prefix="{{iconPrefix}}"
     />
   </view>
   <text
@@ -39,7 +40,12 @@
     aria-live="assertive"
     >{{value+'星'}} {{utils.getText(texts,value,defaultTexts)}}</text
   >
-  <view wx:if="{{tipsVisible}}" class="{{classPrefix}}__tips" style="left: {{tipsLeft}}px" aria-hidden="{{true}}">
+  <view
+    wx:if="{{tipsVisible}}"
+    class="{{_.cls(classPrefix + '__tips', [placement])}}"
+    style="left: {{tipsLeft}}px"
+    aria-hidden="{{true}}"
+  >
     <block wx:if="{{actionType == 'tap'}}">
       <view
         wx:if="{{allowHalf}}"

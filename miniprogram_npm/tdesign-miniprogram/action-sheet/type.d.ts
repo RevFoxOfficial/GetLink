@@ -44,7 +44,6 @@ export interface TdActionSheetProps {
         value?: object;
     };
 }
-
 export interface ActionSheetItem {
     label: string;
     color?: string;

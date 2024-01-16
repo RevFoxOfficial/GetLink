@@ -1,17 +1,15 @@
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length,
-        r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import {SuperComponent, wxComponent} from '../common/src/index';
+import { SuperComponent, wxComponent } from '../common/src/index';
 import config from '../common/config';
 import props from './props';
 import menuProps from '../dropdown-menu/props';
-import {getRect} from '../common/utils';
-
-const {prefix} = config;
+import { getRect } from '../common/utils';
+const { prefix } = config;
 const name = `${prefix}-dropdown-item`;
 let DropdownMenuItem = class DropdownMenuItem extends SuperComponent {
     constructor() {
@@ -45,7 +43,7 @@ let DropdownMenuItem = class DropdownMenuItem extends SuperComponent {
             '../dropdown-menu/dropdown-menu': {
                 type: 'parent',
                 linked(target) {
-                    const {zIndex, duration, showOverlay} = target.properties;
+                    const { zIndex, duration, showOverlay } = target.properties;
                     this.setData({
                         zIndex,
                         duration,
@@ -68,7 +66,7 @@ let DropdownMenuItem = class DropdownMenuItem extends SuperComponent {
                 });
             },
             value(v) {
-                const {options, labelAlias, valueAlias} = this.data;
+                const { options, labelAlias, valueAlias } = this.data;
                 if (this.data.multiple) {
                     if (!Array.isArray(v))
                         throw TypeError('应传入数组类型的 value');
@@ -87,7 +85,7 @@ let DropdownMenuItem = class DropdownMenuItem extends SuperComponent {
             show(visible) {
                 if (visible) {
                     this.getParentBottom(() => {
-                        this.setData({wrapperVisible: true});
+                        this.setData({ wrapperVisible: true });
                     });
                 }
             },
@@ -112,17 +110,18 @@ let DropdownMenuItem = class DropdownMenuItem extends SuperComponent {
                 });
             },
             handleTreeClick(e) {
-                const {level, value: itemValue} = e.currentTarget.dataset;
-                const {value} = this.data;
+                const { level, value: itemValue } = e.currentTarget.dataset;
+                const { value } = this.data;
                 value[level] = itemValue;
-                this._trigger('change', {value});
+                this._trigger('change', { value });
             },
             handleRadioChange(e) {
-                const {value} = e.detail;
-                this._trigger('change', {value});
+                const { value } = e.detail;
+                this._trigger('change', { value });
                 if (!this.data.multiple) {
                     this.closeDropdown();
-                } else {
+                }
+                else {
                     const firstChecked = this.data.options.find((item) => value.includes(item.value));
                     if (firstChecked) {
                         this.data.firstCheckedValue = firstChecked.value;
@@ -136,16 +135,16 @@ let DropdownMenuItem = class DropdownMenuItem extends SuperComponent {
                 }
             },
             handleReset() {
-                this._trigger('change', {value: []});
+                this._trigger('change', { value: [] });
                 this._trigger('reset');
             },
             handleConfirm() {
-                this._trigger('confirm', {value: this.data.value});
+                this._trigger('confirm', { value: this.data.value });
                 this.closeDropdown();
-                this.setData({firstCheckedValue: this.data.firstCheckedValue});
+                this.setData({ firstCheckedValue: this.data.firstCheckedValue });
             },
             onLeaved() {
-                this.setData({wrapperVisible: false});
+                this.setData({ wrapperVisible: false });
             },
         };
     }

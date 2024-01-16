@@ -46,6 +46,7 @@ export declare type RadioOption = string | number | RadioOptionObj;
 export interface RadioOptionObj {
     label?: string;
     value?: string | number;
+    readonly?: boolean;
     disabled?: boolean;
     allowUncheck?: boolean;
 }

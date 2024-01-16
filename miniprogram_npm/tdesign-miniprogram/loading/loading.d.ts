@@ -1,9 +1,7 @@
-import {SuperComponent} from '../common/src/index';
-import type {TdLoadingProps} from './type';
-
+import { SuperComponent } from '../common/src/index';
+import type { TdLoadingProps } from './type';
 export interface LoadingProps extends TdLoadingProps {
 }
-
 export default class Loading extends SuperComponent {
     externalClasses: string[];
     data: {
@@ -75,6 +73,5 @@ export default class Loading extends SuperComponent {
     lifetimes: {
         detached(): void;
     };
-
     refreshPage(): void;
 }

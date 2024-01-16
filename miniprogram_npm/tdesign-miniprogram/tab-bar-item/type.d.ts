@@ -1,5 +1,4 @@
-import {BadgeProps} from '../badge/index';
-
+import { BadgeProps } from '../badge/index';
 export interface TdTabBarItemProps {
     badgeProps?: {
         type: ObjectConstructor;
@@ -22,7 +21,6 @@ export interface TdTabBarItemProps {
         value?: string | number;
     };
 }
-
 export interface SubTabBarItem {
     value: string;
     label: string;

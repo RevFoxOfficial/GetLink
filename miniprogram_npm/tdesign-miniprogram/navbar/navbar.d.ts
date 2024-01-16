@@ -1,5 +1,4 @@
-import {SuperComponent} from '../common/src/index';
-
+import { SuperComponent } from '../common/src/index';
 export default class Navbar extends SuperComponent {
     externalClasses: string[];
     timer: any;
@@ -18,9 +17,8 @@ export default class Navbar extends SuperComponent {
         boxStyle: string;
         showTitle: string;
     };
+    attached(): void;
     methods: {
         goBack(): void;
     };
-
-    attached(): void;
 }

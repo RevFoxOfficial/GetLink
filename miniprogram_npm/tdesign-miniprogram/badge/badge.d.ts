@@ -1,9 +1,7 @@
-import {SuperComponent} from '../common/src/index';
-import type {TdBadgeProps} from './type';
-
+import { SuperComponent } from '../common/src/index';
+import type { TdBadgeProps } from './type';
 export interface BadgeProps extends TdBadgeProps {
 }
-
 export default class Badge extends SuperComponent {
     options: {
         multipleSlots: boolean;

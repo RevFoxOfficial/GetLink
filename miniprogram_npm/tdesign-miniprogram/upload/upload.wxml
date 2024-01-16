@@ -13,7 +13,7 @@
       aria-role="presentation"
     >
       <view
-        class="{{classPrefix}}__wrapper"
+        class="{{classPrefix}}__wrapper {{disabled? classPrefix + '__wrapper--disabled' : '' }}"
         style="{{gridItemStyle}}"
         aria-role="{{ariaRole || this.getWrapperAriaRole(file)}}"
         aria-label="{{ariaLabel || this.getWrapperAriaLabel(file)}}"
@@ -61,17 +61,17 @@
             {{file.status == 'reload' ? '重新上传' : '上传失败'}}
           </view>
         </view>
-      </view>
 
-      <!-- 删除 -->
-      <view
-        class="{{classPrefix}}__close-btn hotspot-expanded"
-        bindtap="onDelete"
-        data-index="{{index}}"
-        aria-role="button"
-        aria-label="删除"
-      >
-        <t-icon name="close" size="16" color="#fff" />
+        <!-- 删除 -->
+        <view
+          class="{{classPrefix}}__close-btn hotspot-expanded"
+          bindtap="onDelete"
+          data-index="{{index}}"
+          aria-role="button"
+          aria-label="删除"
+        >
+          <t-icon name="close" size="16" color="#fff" />
+        </view>
       </view>
     </t-grid-item>
 
@@ -86,7 +86,7 @@
       <view class="{{classPrefix}}__wrapper" style="{{gridItemStyle}}">
         <slot name="add-content" />
         <block wx:if="{{addContent}}">{{addContent}}</block>
-        <view wx:else class="{{classPrefix}}__add-icon">
+        <view wx:else class="{{classPrefix}}__add-icon {{disabled? classPrefix + '__add-icon--disabled' : '' }}">
           <t-icon name="add" />
         </view>
       </view>

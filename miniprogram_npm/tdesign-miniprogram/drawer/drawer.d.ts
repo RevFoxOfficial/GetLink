@@ -1,5 +1,4 @@
-import {ComponentsOptionsType, SuperComponent} from '../common/src/index';
-
+import { ComponentsOptionsType, SuperComponent } from '../common/src/index';
 export default class Drawer extends SuperComponent {
     externalClasses: any[];
     options: ComponentsOptionsType;
@@ -8,7 +7,7 @@ export default class Drawer extends SuperComponent {
         classPrefix: string;
     };
     methods: {
-        visibleChange({detail}: {
+        visibleChange({ detail }: {
             detail: any;
         }): void;
         itemClick(detail: any): void;
