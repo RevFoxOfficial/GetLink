@@ -93,6 +93,7 @@ let DropdownMenu = class DropdownMenu extends SuperComponent {
                 const { index } = e.currentTarget.dataset;
                 this.toggle(index);
             },
+            noop() { },
         };
     }
 };

@@ -26,5 +26,5 @@
   transform: scale(1.5);
 }
 .t-draggable {
-  position: absolute;
+  position: fixed;
 }

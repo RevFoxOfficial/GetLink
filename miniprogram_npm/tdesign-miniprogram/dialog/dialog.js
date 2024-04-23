@@ -72,7 +72,7 @@ let Dialog = class Dialog extends SuperComponent {
         };
         this.methods = {
             onTplButtonTap(e) {
-                var _a, _b;
+                var _a, _b, _c;
                 const evtType = e.type;
                 const { type, extra } = e.target.dataset;
                 const button = this.data[`_${type}`];
@@ -92,7 +92,7 @@ let Dialog = class Dialog extends SuperComponent {
                     (_a = this[toCamel(`on-${type}`)]) === null || _a === void 0 ? void 0 : _a.call(this, type);
                 }
                 if (evtType !== 'tap') {
-                    const success = ((_b = e.detail) === null || _b === void 0 ? void 0 : _b.errMsg.indexOf('ok')) > -1;
+                    const success = ((_c = (_b = e.detail) === null || _b === void 0 ? void 0 : _b.errMsg) === null || _c === void 0 ? void 0 : _c.indexOf('ok')) > -1;
                     this.triggerEvent(success ? 'open-type-event' : 'open-type-error-event', e.detail);
                 }
             },

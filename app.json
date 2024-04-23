@@ -13,7 +13,7 @@
     "navigationStyle": "custom",
     "navigationBarTextStyle": "@navTxtStyle",
     "backgroundColor": "@bgColor",
-    "navigationBarTitleText": "狐云问链",
+    "navigationBarTitleText": "狐云同域",
     "backgroundTextStyle": "@bgTxtStyle",
     "backgroundColorTop": "@bgColorTop",
     "backgroundColorBottom": "@bgColorBottom"

@@ -1,4 +1,4 @@
-// <one line to give the program's name and a brief idea of what it does.>
+// 狐云同域
 // Copyright (C) 2023  RevFox
 //
 // This program is free software: you can redistribute it and/or modify
@@ -60,7 +60,7 @@ Component({
         resultList: [{
             title: '仅支持微信公众平台用户',
             theme: 'default',
-            description: '狐云问链微信小程序仅支持微信公众平台用户从公众平台后台使用，无法直接打开小程序使用',
+            description: '狐云同域微信小程序仅支持微信公众平台用户从公众平台后台使用，无法直接打开小程序使用',
         },],
     },
 

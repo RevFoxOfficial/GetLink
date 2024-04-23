@@ -43,6 +43,11 @@ let Tag = class Tag extends SuperComponent {
                     _icon: calcIcon(v),
                 });
             },
+            closable(v) {
+                this.setData({
+                    _closable: calcIcon(v, 'close'),
+                });
+            },
         };
         this.methods = {
             setClass() {

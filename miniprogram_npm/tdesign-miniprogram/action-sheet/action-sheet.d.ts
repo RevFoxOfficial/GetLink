@@ -23,7 +23,15 @@ export default class ActionSheet extends SuperComponent {
             type: ArrayConstructor;
             value?: (string | import("./type").ActionSheetItem)[];
         };
+        popupProps?: {
+            type: ObjectConstructor;
+            value?: object;
+        };
         showCancel?: {
+            type: BooleanConstructor;
+            value?: boolean;
+        };
+        showOverlay?: {
             type: BooleanConstructor;
             value?: boolean;
         };
@@ -38,14 +46,6 @@ export default class ActionSheet extends SuperComponent {
         defaultVisible: {
             type: BooleanConstructor;
             value?: boolean;
-        };
-        showOverlay: {
-            type: BooleanConstructor;
-            value?: boolean;
-        };
-        popupProps: {
-            type: ObjectConstructor;
-            value?: object;
         };
     };
     data: {

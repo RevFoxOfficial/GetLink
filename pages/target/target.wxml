@@ -1,4 +1,4 @@
-<!-- <one line to give the program's name and a brief idea of what it does.>
+<!-- 狐云同域
      Copyright (C) 2023  RevFox
 
      This program is free software: you can redistribute it and/or modify
@@ -18,14 +18,14 @@
 <!--pages/target/target.wxml-->
 
 <view class="block">
-  <t-navbar title="狐云问链" t-class-title="nav-title" />
+  <t-navbar title="狐云同域" t-class-title="nav-title" />
 </view>
 
 <view wx:for="{{resultList}}" wx:for-item="item" wx:key="index">
   <view class="demo-section__content">
     <t-result theme="{{item.theme}}" title="{{item.title}}" description="{{item.description}}" />
     <!-- 基础页脚 只有版权信息 -->
-    <t-footer text="内容来源于微信公众平台用户输入，不代表狐云问链立场"></t-footer>
+    <t-footer text="内容来源于微信公众平台用户输入，不代表狐云同域立场"></t-footer>
 
   </view>
 </view>

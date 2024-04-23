@@ -71,6 +71,7 @@ let Calendar = class Calendar extends SuperComponent {
             },
             value(v) {
                 this.base.value = v;
+                this.calcMonths();
             },
             visible(v) {
                 if (v) {
@@ -80,8 +81,9 @@ let Calendar = class Calendar extends SuperComponent {
                 }
             },
             format(v) {
+                const { usePopup, visible } = this.data;
                 this.base.format = v;
-                if (!this.data.usePopup) {
+                if (!usePopup || visible) {
                     this.calcMonths();
                 }
             },

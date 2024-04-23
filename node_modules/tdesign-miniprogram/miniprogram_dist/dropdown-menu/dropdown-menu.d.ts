@@ -28,5 +28,6 @@ export default class DropdownMenu extends SuperComponent {
         toggle(index: number): void;
         getAllItems(): void;
         handleToggle(e: WechatMiniprogram.BaseEvent): void;
+        noop(): void;
     };
 }

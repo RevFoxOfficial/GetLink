@@ -1,4 +1,4 @@
-/* <one line to give the program's name and a brief idea of what it does.>
+/* 狐云同域
  Copyright (C) 2023  RevFox
 
  This program is free software: you can redistribute it and/or modify
@@ -14,25 +14,6 @@
  You should have received a copy of the GNU Affero General Public License
  along with this program.  If not, see <https://www.gnu.org/licenses/>.*/
 
-Page {
-  --td-result-title-color: var(--td-font-gray-1, rgba(0, 0, 0, 0.9));
-  --td-result-description-color: var(--td-font-gray-2, rgba(0, 0, 0, 0.6));
-  --td-footer-text-color: var(--td-font-gray-3, rgba(0, 0, 0, 0.4));
-  --td-footer-link-dividing-line-color: var(--td-font-gray-3, rgba(0, 0, 0, 0.4));
-  --td-navbar-bg-color: var(--td-font-white-1, #ffffff);
-  --td-navbar-color: var(--td-font-gray-1, rgba(0, 0, 0, 0.9));
-}
-
-@media (prefers-color-scheme: dark) {
-  page {
-    --td-result-title-color: var(--td-font-gray-1, rgba(255, 255, 255, 0.9));
-    --td-result-description-color: var(--td-font-gray-2, rgba(255, 255, 255, 0.6));
-    --td-footer-text-color: var(--td-font-gray-3, rgba(255, 255, 255, 0.4));
-    --td-footer-link-dividing-line-color: var(--td-font-gray-3, rgba(255, 255, 255, 0.4));
-    --td-navbar-bg-color: var(--td-font-gray-1, #191919);
-    --td-navbar-color: var(--td-font-gray-1, rgba(255, 255, 255, 0.9));
-  }
-}
 
 .page-s {
   padding: 42rpx 50rpx 40rpx;

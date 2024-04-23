@@ -1,4 +1,4 @@
-// <one line to give the program's name and a brief idea of what it does.>
+// 狐云同域
 // Copyright (C) 2023  RevFox
 //
 // This program is free software: you can redistribute it and/or modify
@@ -62,7 +62,7 @@ Page({
         const pattern = /^(?:(?:https?|ftp):\/\/)?(?:www\.)?(?:[\w-]+\.)*(?:xn--(?:[\w-]+\.)+[\w-]{2,}|(?:[\w-]+\.)+[\w-]{2,})(?::\d{1,5})?(?:[/?#][^\s]*)?$/
         if (options.text.length == 0) {
             var oldList = this.data.resultList;
-            oldList[0].description = "狐云问链没有接收到内容";
+            oldList[0].description = "狐云同域没有接收到内容";
             oldList[0].title = "内容为空";
             oldList[0].theme = 'error';
             this.setData({
@@ -70,7 +70,7 @@ Page({
             })
         } else if (!(pattern.test(options.text))) {
             var oldList = this.data.resultList;
-            oldList[0].description = "狐云问链仅支持网址（不包括国际化域名）";
+            oldList[0].description = "狐云同域仅支持网址（不包括非 ASCII 域名）";
             oldList[0].title = "内容并非网址";
             oldList[0].theme = 'error';
             this.setData({
